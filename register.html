@@ -1,8 +1,11 @@
 <head lang="PT-BR">
     <meta charset="UTF-8">
 
-    <title>Login</title>
+    <title>Register</title>
+    <link rel="stylesheet" href="css/cadastro.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="js/jquery.js"></script>
+    <script src="js/cadastro.js"></script> 
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -20,20 +23,25 @@
                     
              <!-- Login Form -->
         <form lang="PT-BR">
-            <input type="text" id="input_name" class="fadeIn second" name="name" placeholder="Name">
-            <input type="date" id="input_birthDate" class="fadeIn third" name="birth_date" placeholder="Birth date">
-            <input type="text" id="input_email" class="fadeIn third" name="email" placeholder="E-mail">
-            <input type="password" id="input_password" class="fadeIn third" name="password" placeholder="Password">
-            <input type="password" id="input_passwordConfirm" class="fadeIn third" name="password_confirm"
+            <input type="text" id="input_name" class="form-Cadastro" name="name" placeholder="Name">
+            <input type="date" id="input_birthDate" class="form-Cadastro" name="birth_date" placeholder="Birth date">
+            <input type="text" id="input_email" class="form-Cadastro" name="email" placeholder="E-mail">
+            <input type="password" id="input_password" class="form-Cadastro" name="password" placeholder="Password">
+            <input type="password" id="input_passwordConfirm" class="form-Cadastro" name="password_confirm"
                 placeholder="Confirm password">
-            <input type="number" id="input_cardNumber" class="fadeIn third" name="card_number"
-                placeholder="Credit card number">
-            <input type="number" id="input_CPF" class="fadeIn third" name="CPF" placeholder="CPF">
-            <input type="number" id="input_CPF_CNJPJ" class="fadeIn third" name="CPF_CNJPJ" placeholder="CPF / CNJPJ">
+            <input type="number" id="input_cardNumber" class="form-Cadastro" name="card_number"
+                placeholder="Credit card number"><br>
+      
+            <input type="radio" id="bCPF" class="fadeIn third" name="CPF_CNPJ"> CPF
+            <input type="radio" id="bCNPJ" class="fadeIn third" name="CPF_CNPJ"> CNPJ
+            <div id="formCadastroPessoa">
+            <!--<input type="number" id="input_CPF" class="form-Cadastro" name="CPF" placeholder="CPF">
+            <input type="number" id="input_CPF_CNPJ" class="form-Cadastro" name="CPF_CNPJ" placeholder="CNPJ">-->
+            </div>
             <br>
-            <br>
-            <br>
-            <input type="submit" class="fadeIn fourth" value="Log In">
+
+            <button type="button" id="bCadastrarUsuario" class="bCadastrar" value="Cadastrar">Cadastrar</button>
+
         </form>
 
 

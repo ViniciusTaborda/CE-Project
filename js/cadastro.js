@@ -17,7 +17,7 @@ function cadastrarUsuario(){
         validaCampoCadastro("input_birthDate");
         validaCampoCadastro("input_email");
         validaCampoCadastro("input_password");
-        validaCampoCadastro("input_cardNumber");
+        validaCampoCadastro("input_passwordConfirm");
         validaCampoCadastro("input_cardNumber");
         validaCampoCadastro("input_CPF");
         validaCampoCadastro("input_CNPJ");
