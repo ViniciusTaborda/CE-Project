@@ -1,4 +1,4 @@
-.form-Cadastro{
+.form_register{
 
     background-color: #f6f6f6;
     border: none;
@@ -19,18 +19,18 @@
     -webkit-border-radius: 5px 5px 5px 5px;
     border-radius: 5px 5px 5px 5px;
 }
-  .campo-obrig{
+  .obrig_input{
     border: solid 2px red;
     
   }
 
 
-  #formCadastroPessoa {
+  #form_register_user {
 
     text-align: center;
   }
 
-  .bCadastrar{
+  .button_register{
     background-color: #56baed;
     border: none;
     color: white;
