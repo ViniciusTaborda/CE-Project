@@ -2,7 +2,7 @@
  <?php
 
 	date_default_timezone_set('Etc/UTC');
-	require '../PHPMailer/PHPMailerAutoload.php';
+	require './PHPMailer/PHPMailerAutoload.php';
     
 	$tituloEmail = "título";
 
