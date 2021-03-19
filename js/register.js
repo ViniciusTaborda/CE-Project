@@ -100,8 +100,8 @@ function saveUsers(){
     var input_email = $("#input_email").val();
     var hash_password = stringToHash($("#input_password").val());
     var input_cardNumber =  $("#input_cardNumber").val();
-    var input_cardExpirationDate = $("#input_card_expiration_date").val();
-    var input_securityCode = $("#input_security_code").val();
+    var input_cardExpirationDate = $("#input_cardExpirationDate").val();
+    var input_securityCode = $("#input_securityCode").val();
     var input_cardholder = $("#input_cardholder").val();
     var input_CPF_CNPJ = $("#input_CPF_CNPJ").val();
 
