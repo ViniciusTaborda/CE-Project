@@ -2,7 +2,7 @@
     <meta charset="UTF-8">
 
     <title>Register</title>
-    <link rel="stylesheet" href="css/cadastro.css">
+    
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="js/jquery.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -24,24 +24,29 @@
                     
              <!-- Login Form -->
         <form lang="PT-BR">
-            <input type="text" id="input_name" class="form_register" name="name" placeholder="Name">
-            <input type="date" id="input_birthDate" class="form_register" name="birth_date" placeholder="Birth date">
-            <input type="text" id="input_email" class="form_register" name="email" placeholder="E-mail">
-            <input type="password" id="input_password" class="form_register" name="password" placeholder="Password">
-            <input type="password" id="input_passwordConfirm" class="form_register" name="password_confirm"
+            <input type="text" id="input_name" class="form_register" name="input_name" placeholder="Name">
+            <input type="date" id="input_birthDate" class="form_register1" name="input_birthDate" placeholder="Birth date">
+            <input type="text" id="input_email" class="form_register2" name="input_email" placeholder="E-mail">
+            <input type="password" id="hash_password" class="form_register3" name="hash_password" placeholder="Password">
+            <input type="password" id="input_passwordConfirm" class="form_register3" name="input_passwordConfirm"
                 placeholder="Confirm password">
-            <input type="number" id="input_cardNumber" class="form_register" name="card_number"
-                placeholder="Credit card number"><br>
-      
-            <input type="radio" id="bCPF" class="fadeIn third" name="CPF_CNPJ"> CPF
-            <input type="radio" id="bCNPJ" class="fadeIn third" name="CPF_CNPJ"> CNPJ
+            <input type="number" id="input_cardNumber" class="form_register4" name="input_cardNumber"
+                placeholder="Credit card number">
+            <input type="number" id="input_securityCode" class="form_register5" name="input_securityCode"
+                placeholder="Code">
+            <input type="text" id="input_cardExpirationDate" class="form_register1" name="input_cardExpirationDate"
+                placeholder="Credit card expiration">
+
+            <input type="text" id="input_cardholder" class="form_register" name="input_cardholder" placeholder="Cardholder"><br>
+            <input type="radio" id="bCPF" class="fadeIn third" name="CPF_CNPJ" value="1" checked> CPF
+            <input type="radio" id="bCNPJ" class="fadeIn third" name="CPF_CNPJ" value="2" checked> CNPJ
             <div id="form_register_user">
-            <!--<input type="number" id="input_CPF" class="form-Cadastro" name="CPF" placeholder="CPF">
-            <input type="number" id="input_CPF_CNPJ" class="form-Cadastro" name="CPF_CNPJ" placeholder="CNPJ">-->
+            <input type="text" id="input_CPF_CNPJ" class="form_register" name="input_CPF_CNPJ">
+            
             </div>
             <br>
 
-            <button type="button" id="button_register" class="button_register" value="Cadastrar">Cadastrar</button>
+            <button type="button" id="bregisterUser" class="button_register" value="Cadastrar">Cadastrar</button>
 
         </form>
 
