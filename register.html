@@ -13,6 +13,7 @@
     <link href="./css/styles.css" rel="stylesheet" id="bootstrap-css">
     <link href="./css/register.css" rel="stylesheet" id="bootstrap-css">
 
+    <script src="js/sjcl.js"></script>
     <script src="js/register.js"></script> 
 
 
@@ -27,7 +28,7 @@
             <input type="text" id="input_name" class="form_register" name="input_name" placeholder="Name">
             <input type="date" id="input_birthDate" class="form_register1" name="input_birthDate" placeholder="Birth date">
             <input type="text" id="input_email" class="form_register2" name="input_email" placeholder="E-mail">
-            <input type="password" id="hash_password" class="form_register3" name="hash_password" placeholder="Password">
+            <input type="password" id="input_password" class="form_register3" name="input_password" placeholder="Password">
             <input type="password" id="input_passwordConfirm" class="form_register3" name="input_passwordConfirm"
                 placeholder="Confirm password">
             <input type="number" id="input_cardNumber" class="form_register4" name="input_cardNumber"
@@ -46,7 +47,7 @@
             </div>
             <br>
 
-            <button type="button" id="bregisterUser" class="button_register" value="Cadastrar">Cadastrar</button>
+            <button onclick="saveUsers();" type="button" id="bregisterUser" class="button_register" value="Cadastrar">Cadastrar</button>
 
         </form>
 

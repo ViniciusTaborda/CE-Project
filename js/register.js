@@ -7,6 +7,7 @@ $(document).ready(function(){
 });
 
 var registerError = false;
+const entry_point = "http://localhost/CE-Project/";
 
 function registerUser(){
 
@@ -73,6 +74,11 @@ function validatePassword(){
 
 }
 
+function stringToHash(arg_string){
+    return sjcl.codec.hex.fromBits(sjcl.hash.sha256.hash(arg_string));
+
+}
+
 function clearInputs(){
     $("#input_name").val("");
     $("#input_birthDate").val("");
@@ -81,8 +87,46 @@ function clearInputs(){
     $("#input_cardNumber").val("");
     $("#input_cardNumber").val("");
     $("#input_input_CPF_CNPJ").val("");
-    ;
-
 
 }
+
+
+function saveUsers(){
+
+    let end_point = "php/insertUser.php";
+
+    var input_name = $("#input_name").val();
+    var input_birthDate = $("#input_birthDate").val();
+    var input_email = $("#input_email").val();
+    var hash_password = stringToHash($("#input_password").val());
+    var input_cardNumber =  $("#input_cardNumber").val();
+    var input_cardExpirationDate = $("#input_card_expiration_date").val();
+    var input_securityCode = $("#input_security_code").val();
+    var input_cardholder = $("#input_cardholder").val();
+    var input_CPF_CNPJ = $("#input_CPF_CNPJ").val();
+
+    JSON_variables = {
+        name: input_name,
+        birth_date: input_birthDate,
+        email: input_email,
+        password: hash_password,
+        card_number: input_cardNumber,
+        card_expiration_date: input_cardExpirationDate,
+        security_code: input_securityCode,
+        cardholder: input_cardholder,
+        CPF_CNPJ: input_CPF_CNPJ
+        };
+
+    let url = `${entry_point}${end_point}`;
+
+    console.log(url)
+
+    $.post(url, JSON_variables, function(data) {
+        
+        console.log(data);
+
+    });
+
+}
+
 
