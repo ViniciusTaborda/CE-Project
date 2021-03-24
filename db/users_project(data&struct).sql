@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 20, 2021 at 01:19 AM
+-- Generation Time: Mar 24, 2021 at 11:51 PM
 -- Server version: 8.0.21
 -- PHP Version: 8.0.2
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `users_project`
 --
-CREATE DATABASE IF NOT EXISTS `users_project` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
-USE `users_project`;
 
 -- --------------------------------------------------------
 
