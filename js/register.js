@@ -2,7 +2,9 @@ $(document).ready(function(){
 
     registerUser();
     cpf();
-    
+    $( "#bRegister_User" ).click(function() {
+        alert( "Handler for .click() called." );
+      });
 
 });
 

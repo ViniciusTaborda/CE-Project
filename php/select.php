@@ -11,8 +11,10 @@
     $sql = "SELECT * FROM user";
     $result = $conn->query($sql);
 
+    json_decode($result); 
+
     echo json_encode($result->fetch_assoc());
     
     $conn->close();
 
-    ?>
+?>

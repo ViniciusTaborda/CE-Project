@@ -145,7 +145,7 @@
     text-align: center;
   }
 
-  .button_register{
+  /* .button_register{
     background-color: #56baed;
     border: none;
     color: white;
@@ -165,7 +165,8 @@
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-  }
+    cursor: pointer;
+  } */
 
     #formContent {
     -webkit-border-radius: 10px 10px 10px 10px;
