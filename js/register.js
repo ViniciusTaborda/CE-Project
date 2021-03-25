@@ -1,10 +1,7 @@
 $(document).ready(function(){
-
     registerUser();
     cpf();
-    $( "#bRegister_User" ).click(function() {
-        alert( "Handler for .click() called." );
-      });
+
 
 });
 
@@ -13,13 +10,13 @@ const entry_point = "http://localhost/CE-Project/";
 
 function registerUser(){
 
-    $("#bregisterUser").click(function(){
+    $("#bRegister_user").click(function(){
 
         registerError = false
         validateRegister("input_name");
         validateRegister("input_birthDate");
         validateRegister("input_email");
-        validateRegister("hash_password");
+        validateRegister("input_password");
         validateRegister("input_passwordConfirm");
         validateRegister("input_cardNumber");
         validateRegister("input_securityCode");
@@ -29,10 +26,9 @@ function registerUser(){
         validatePassword();
 
         if (registerError == false){
-            alert("Salvo");
             clearInputs();
+            saveUsers();
         }else{
-            alert("Preencher campos Obrigatorios")
         }
    
 
