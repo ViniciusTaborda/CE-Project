@@ -1,8 +1,6 @@
 <?php
     include "./config.php";
 
-    echo var_dump($_POST);
-
     $conn = new mysqli($servername, $username, $password, $dbname);
 
     trim($name = $_POST["name"]);
