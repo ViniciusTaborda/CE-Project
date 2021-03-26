@@ -60,7 +60,7 @@ function cpf(){
 
 function validatePassword(){
 
-    var password = $("#hash_password").val();
+    var password = $("#input_password").val();
     var confirmPassword = $("#input_passwordConfirm").val();
 
     if (password != ""){

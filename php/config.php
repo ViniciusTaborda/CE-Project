@@ -3,6 +3,6 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "users_project";
+    $dbname = "user_project";
 
 ?>
