@@ -168,4 +168,30 @@ function saveUsers(){
 
 }
 
+function authLogin(){
 
+//    $("#button_logIn").click(function(){
+//        alert("oi");
+
+
+        let end_point = "php/authUser.php";
+
+        var input_email = $("#input_login").val();
+        var hash_password = stringToHash($("#input_password").val());
+    
+        JSON_variables = {
+            email: input_email,
+            password: hash_password,
+            };
+    
+        let url = `${entry_point}${end_point}`;
+        
+        console.log(url);
+
+        $.post(url, JSON_variables, function(data) {
+        
+        console.log(data);
+
+        });
+      
+}
