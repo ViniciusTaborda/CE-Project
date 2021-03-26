@@ -26,12 +26,12 @@
 		$response_message = array(	"Status"  => 200,
 									"Message" => "Success");
 
-		echo $response_message;
-	} else {
+		echo json_encode($response_message);
+		} else {
 		$response_message = array(	"Status"  => 500,
 									"Message" => $conn->error);
-		echo $response_message;
-  	}
+		echo json_encode($response_message);
+								}
 
     $conn->close();
 

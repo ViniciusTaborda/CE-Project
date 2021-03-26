@@ -1,7 +1,7 @@
 $(document).ready(function(){
+    jQuery.noConflict(); 
     registerUser();
     cpf();
-
 
 });
 
@@ -28,6 +28,7 @@ function registerUser(){
         if (registerError == false){
             clearInputs();
             saveUsers();
+            $("#modal_registered_successfully").modal('show');
         }else{
         }
    
@@ -78,13 +79,16 @@ function stringToHash(arg_string){
 }
 
 function clearInputs(){
-    $("#input_name").val("");
-    $("#input_birthDate").val("");
-    $("#input_email").val("");
-    $("#hash_password").val("");
-    $("#input_cardNumber").val("");
-    $("#input_cardNumber").val("");
-    $("#input_input_CPF_CNPJ").val("");
+    $("#input_name").val();
+    $("#input_birthDate").val();
+    $("#input_email").val();
+    $("#input_password").val();
+    $("#input_confirmPassword").val();
+    $("#input_cardNumber").val();
+    $("#input_cardExpirationDate").val();
+    $("#input_securityCode").val();
+    $("#input_cardholder").val();
+    $("#input_CPF_CNPJ").val();
 
 }
 
@@ -123,7 +127,14 @@ function saveUsers(){
         
         console.log(data);
 
-    });
+    })
+    .fail(function() {
+
+        $("#modal_failed").replaceWith( `<div id="modal_failed_body" class="modal-body"> Erro: ${data}</div>`);
+        $("#modal_failed").modal('show');
+
+    })
+    ;
 
 }
 
