@@ -26,9 +26,10 @@ function registerUser(){
         validatePassword();
 
         if (registerError == false){
-            clearInputs();
             saveUsers();
             $("#modal_registered_successfully").modal('show');
+            sendEmailConfirm();
+            clearInputs();
         }else{
         }
    
@@ -93,6 +94,36 @@ function clearInputs(){
 }
 
 
+function sendEmailConfirm(){
+
+    let end_point = "php/sendEmail.php";
+
+    var input_name = $("#input_name").val();
+    var input_email = $("#input_email").val();
+
+    JSON_variables = {
+        name: input_name,
+        email: input_email
+        };
+
+    let url = `${entry_point}${end_point}`;
+
+    console.log(url)
+
+    $.post(url, JSON_variables, function(data) {
+        
+        console.log(data);
+
+    })
+    .fail(function() {
+
+        $("#modal_failed").replaceWith( `<div id="modal_failed_body" class="modal-body"> Erro: ${data}</div>`);
+        $("#modal_failed").modal('show');
+
+    });
+
+}
+
 function saveUsers(){
 
     let end_point = "php/insertUser.php";
@@ -133,8 +164,7 @@ function saveUsers(){
         $("#modal_failed").replaceWith( `<div id="modal_failed_body" class="modal-body"> Erro: ${data}</div>`);
         $("#modal_failed").modal('show');
 
-    })
-    ;
+    });
 
 }
 
