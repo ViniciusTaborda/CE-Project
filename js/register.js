@@ -1,5 +1,6 @@
 
 $(document).ready(function(){
+    
     //jQuery.noConflict();  // esse comando não permite as outras funções desse arquivo js
     registerUser();
     cpf();
@@ -29,8 +30,9 @@ function registerUser(){
         validatePassword();
 
         if (registerError == false){
-            saveUsers();
+            //saveUsers();
             $("#modal_registered_successfully").modal('show');
+            
             sendEmailConfirm();
             clearInputs();
         }else{
@@ -38,6 +40,7 @@ function registerUser(){
    
 
 });
+
 }
 
 function validateRegister(registerInput){
