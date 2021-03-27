@@ -1,16 +1,19 @@
+
 $(document).ready(function(){
-    jQuery.noConflict(); 
+    //jQuery.noConflict();  // esse comando não permite as outras funções desse arquivo js
     registerUser();
     cpf();
+    authLogin();
 
 });
+
 
 var registerError = false;
 const entry_point = "http://localhost/CE-Project/";
 
 function registerUser(){
 
-    $("#bRegister_user").click(function(){
+    ($("#bRegister_user")).click(function(){
 
         registerError = false
         validateRegister("input_name");
@@ -58,8 +61,6 @@ function cpf(){
     });
 }
 
-
-
 function validatePassword(){
 
     var password = $("#input_password").val();
@@ -92,7 +93,6 @@ function clearInputs(){
     $("#input_CPF_CNPJ").val();
 
 }
-
 
 function sendEmailConfirm(){
 
@@ -170,14 +170,11 @@ function saveUsers(){
 
 function authLogin(){
 
-//    $("#button_logIn").click(function(){
-//        alert("oi");
+    $("#button_logIn").click(function(){
+       let end_point = "php/authUser.php";
 
-
-        let end_point = "php/authUser.php";
-
-        var input_email = $("#input_login").val();
-        var hash_password = stringToHash($("#input_password").val());
+        var input_email = ($("#input_login").val());
+        var hash_password = stringToHash($("#input_password_login").val());
     
         JSON_variables = {
             email: input_email,
@@ -186,12 +183,34 @@ function authLogin(){
     
         let url = `${entry_point}${end_point}`;
         
-        console.log(url);
-
         $.post(url, JSON_variables, function(data) {
-        
-        console.log(data);
+ 
+        if (data === "empty"){
+            $("#alertLogin").html("");
 
-        });
+            var conteudo = "";
+            conteudo +=  '<div class="alert alert-danger" role="alert">';
+            conteudo += 'Preencher todos os campos!';
+            conteudo += ' </div>'
+
+            $("#alertLogin").append(conteudo)
+
+        }if (data === "incorrect"){
+            $("#alertLogin").html("");
+
+            var conteudo = "";
+            conteudo +=  '<div class="alert alert-danger" role="alert">';
+            conteudo += 'Usuario ou Senha Invalida';
+            conteudo += ' </div>'
+
+            $("#alertLogin").append(conteudo)
+
+        }if (data === "OK"){
+           window.location.href = "mainPage.html";
+        }
+
+       });
+ 
+    });
       
 }
