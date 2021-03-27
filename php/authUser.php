@@ -1,5 +1,7 @@
 <?php
     
+    session_start();
+
     include "./config.php";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -14,20 +16,23 @@
       $password = $_POST['password'];
 
       if (empty($email) or empty($password)){  // VERIFICA CAMPOS VAZIOS
-          $errorLogin = "empty";  //MENSAGEM 
-          echo $errorLogin;
+          $msgLogin = "empty";  //MENSAGEM 
+          echo $msgLogin;
       }else{
-        $sql = "SELECT * FROM user WHERE email = '$email' AND password = '$password' " ; // VERIFICA EMAIL E SENHA
-        $result = $conn->query($sql); 
+          $sql = "SELECT * FROM user WHERE email = '$email' AND password = '$password' " ; // VERIFICA EMAIL E SENHA
+          $result = $conn->query($sql); 
 
-        if (mysqli_num_rows($result) > 0){ // SE EXISTE EMAIL E SENHA NO BANCO
-            $errorLogin = "OK";
-            echo $errorLogin;
-            //header('Location: register.html');            
-          }else{
-              $errorLogin = "incorrect";
-              echo $errorLogin;
-          }
+          if (mysqli_num_rows($result) > 0){ // SE EXISTE EMAIL E SENHA NO BANCO
+            $msgLogin = "OK";
+            echo $msgLogin;
+           $_SESSION['logado'] = true;
+          // header("Location: page/homePage.php");   
+              
+
+            }else{
+                $msgLogin = "incorrect";
+                echo $msgLogin;
+            }
         }
 
     //$result = $conn->query($sql);

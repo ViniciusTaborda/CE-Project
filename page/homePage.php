@@ -1,3 +1,19 @@
+<?php
+    session_start();
+
+    if (!isset($_SESSION['logado'])){
+        header("Location: ../login.php");   
+        session_destroy();
+    }
+
+    if (isset ($_GET['logoff'])){
+        session_destroy();
+        header("Location: ../login.php");   
+    }
+
+?>
+
+
 <html>
     <head>
         <style>
@@ -14,7 +30,10 @@
         <div class="imagem">
             <p> WELCOME</p>
         <div class="tenor-gif-embed" data-postid="14912728" data-share-method="host" data-width="100%" data-aspect-ratio="1.2266009852216748"><a href="https://tenor.com/view/mulher-maravilha-gal-gadot-smile-gif-14912728">Mulher Maravilha GIF</a> from <a href="https://tenor.com/search/mulher-gifs">Mulher GIFs</a></div>
-        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+       
+       <a href = "?logoff">Sair </a>
+        
+            <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
     </div>
     </body>
 </html>
