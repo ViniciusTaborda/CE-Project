@@ -209,7 +209,7 @@ function authLogin(){
             $("#alertLogin").append(conteudo)
 
         }if (data === "OK"){
-           window.location.href = "mainPage.html";
+           window.location.href = "home.html";
         }
 
        });
