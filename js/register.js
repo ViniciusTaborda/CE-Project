@@ -30,8 +30,8 @@ function registerUser(){
         validatePassword();
 
         if (registerError == false){
-            //saveUsers();
-            $("#modal_registered_successfully").modal('show');
+            saveUsers();
+           // $("#modal_registered_successfully").modal('show');
             
             sendEmailConfirm();
             clearInputs();
