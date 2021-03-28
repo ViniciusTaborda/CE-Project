@@ -1,6 +1,5 @@
 
 $(document).ready(function(){
-    //jQuery.noConflict();  // esse comando não permite as outras funções desse arquivo js
     registerUser();
     cpf();
     authLogin();
@@ -29,8 +28,8 @@ function registerUser(){
         validatePassword();
 
         if (registerError == false){
-            //saveUsers();
-          //  $("#modal_registered_successfully").modal('show');
+            saveUsers();
+            $("#modal_registered_successfully").modal('show');
             sendEmailConfirm();
             clearInputs();
 
@@ -99,7 +98,7 @@ function clearInputs(){
 
 function sendEmailConfirm(){
 
-    let end_point = "php/sendEmail.php";
+    let end_point = "./php/sendEmail.php";
 
     var input_name = $("#input_name").val();
     var input_email = $("#input_email").val();

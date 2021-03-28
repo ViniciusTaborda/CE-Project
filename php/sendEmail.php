@@ -7,7 +7,8 @@
     trim($email = $_POST["email"]);
 
 	$tituloEmail = "Confirm your e-mail at GVFilms!";
-	$link = "http://localhost/CE-Project/php/setValid.php";
+
+	$link = "http://localhost/CE-Project/php/setValid.php?email='$email'";
 	$message = "Hey '$name'!Please click the link below to verify your account. <br><br> '$link'";
 
 	$mail= new PHPMailer;
