@@ -1,4 +1,12 @@
+<?php
+    session_start();
 
+    if (isset($_SESSION['logado'])){
+        header("Location: page/homePage.php");   
+        die();
+    }
+
+?>
 <head>
     <title>Login</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -15,7 +23,8 @@
 </head>
 
 <body>
-  
+
+ 
   <div class="wrapper fadeInDown">
     <div id="formContent">
       <!-- Tabs Titles -->
@@ -32,7 +41,7 @@
         <input type="button" id="button_logIn" class="fadeIn fourth" value="Log In" name="bLogin">
         <div id = "alertLogin">
         <!-- <div class="alert alert-danger" role="alert">
-            alerta
+            deu ruim
           </div> -->
         </div>
       </form>
