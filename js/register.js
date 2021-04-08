@@ -29,8 +29,8 @@ function registerUser(){
         if (registerError == false){
             saveUsers();
             $("#modal_registered_successfully").modal('show');
-            clearInputs();
             sendEmailConfirm();
+            clearInputs();
 
         }else{
         }
