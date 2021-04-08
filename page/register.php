@@ -46,7 +46,7 @@
                     placeholder="Credit card number">
                 <input type="number" maxlength="3" id="input_securityCode" class="form_register5" name="input_securityCode"
                     placeholder="Code">
-                <input type="text" id="input_cardExpirationDate" class="form_register1" name="input_cardExpirationDate"
+                <input type="date" id="input_cardExpirationDate" class="form_register1" name="input_cardExpirationDate"
                     placeholder="Credit card expiration">
     
                 <input type="text" maxlength="128" id="input_cardholder" class="form_register" name="input_cardholder" placeholder="Cardholder"><br>

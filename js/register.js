@@ -6,7 +6,6 @@ $(document).ready(function(){
 
 });
 
-
 var registerError = false;
 const entry_point = "http://localhost/CE-Project/";
 
@@ -32,8 +31,6 @@ function registerUser(){
             $("#modal_registered_successfully").modal('show');
             sendEmailConfirm();
             clearInputs();
-
-
 
         }else{
         }
