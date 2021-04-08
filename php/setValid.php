@@ -1,7 +1,7 @@
 <?php
 include "./config.php";
 
-trim($email = $_GET["email"]);
+$email = trim($_GET["email"]);
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 }
 
 
-$sql = 'UPDATE user SET is_valid = 1 WHERE email = "$email"';
+$sql = "UPDATE user SET is_valid = 1 WHERE email = '$email'";
 
 if ($conn->query($sql) === TRUE) {
 
@@ -20,14 +20,14 @@ if ($conn->query($sql) === TRUE) {
         "Message" => "Success"
     );
 
-    // echo json_encode($response_message);
+    //echo json_encode($response_message);
 } else {
     $response_message = array(
         "Status"  => 500,
         "Message" => $conn->error
     );
 
-    // echo json_encode($response_message);
+    //echo json_encode($response_message);
 }
 
 $conn->close();
@@ -36,7 +36,6 @@ $conn->close();
 <html>
 
 <head>
-
     <head>
         <title>confirm account</title>
         <script type="text/javascript" src="../js/jquery.js"></script>
@@ -47,10 +46,7 @@ $conn->close();
         <link rel="icon" href="../img/icon.png">
         <link href="../css/styles.css" rel="stylesheet" id="bootstrap-css">
         <link href="../css/register.css" rel="stylesheet" id="bootstrap-css">
-
-
     </head>
-
 </head>
 
 <body>
@@ -71,9 +67,7 @@ $conn->close();
                     <br>
                     <br>
                     <br>
-
                     <i style="font-size: 35;" class="fas fa-spinner fa-pulse"></i>
-
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
@@ -81,8 +75,6 @@ $conn->close();
             </div>
         </div>
     </div>
-
-
 </body>
 
 </html>

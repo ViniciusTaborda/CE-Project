@@ -76,7 +76,6 @@ function validatePassword(){
 
 function stringToHash(arg_string){
     return sjcl.codec.hex.fromBits(sjcl.hash.sha256.hash(arg_string));
-
 }
 
 function clearInputs(){

@@ -3,12 +3,12 @@
 	date_default_timezone_set('Etc/UTC');
 	require './PHPMailer/PHPMailerAutoload.php';
     
-	trim($name = $_POST["name"]);
-    trim($email = $_POST["email"]);
+	$name = trim($_POST["name"]);
+    $email = trim($_POST["email"]);
 
 	$tituloEmail = "Confirm your e-mail at GVFilms!";
 
-	$link = "http://localhost/CE-Project/php/setValid.php?email='$email'";
+	$link = "http://localhost/CE-Project/php/setValid.php?email=$email";
 	$message = "Hey '$name'!Please click the link below to verify your account. <br><br> '$link'";
 
 	$mail= new PHPMailer;
@@ -21,7 +21,7 @@
 	$mail->Port = 465; 
 	$mail->Username = 'vineeducostaa@gmail.com'; 
 	$mail->Password = 'hotweels123';
-	$mail->SetFrom('vineeducostaa@gmail.com', 'mostraGVFilms');
+	$mail->SetFrom('vineeducostaa@gmail.com', 'GVFilms');
 	$mail->addAddress($email,'');
 	$mail->Subject = $tituloEmail;
 	$mail->msgHTML($message);
