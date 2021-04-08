@@ -29,8 +29,8 @@ function registerUser(){
         if (registerError == false){
             saveUsers();
             $("#modal_registered_successfully").modal('show');
-            sendEmailConfirm();
             clearInputs();
+            sendEmailConfirm();
 
         }else{
         }
@@ -80,17 +80,16 @@ function stringToHash(arg_string){
 }
 
 function clearInputs(){
-    $("#input_name").val();
-    $("#input_birthDate").val();
-    $("#input_email").val();
-    $("#input_password").val();
-    $("#input_confirmPassword").val();
-    $("#input_cardNumber").val();
-    $("#input_cardExpirationDate").val();
-    $("#input_securityCode").val();
-    $("#input_cardholder").val();
-    $("#input_CPF_CNPJ").val();
-
+    $("#input_name").val("");
+    $("#input_birthDate").val("");
+    $("#input_email").val("");
+    $("#input_password").val("");
+    $("#input_confirmPassword").val("");
+    $("#input_cardNumber").val("");
+    $("#input_cardExpirationDate").val("");
+    $("#input_securityCode").val("");
+    $("#input_cardholder").val("");
+    $("#input_CPF_CNPJ").val("");
 }
 
 function sendEmailConfirm(){

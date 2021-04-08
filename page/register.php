@@ -29,10 +29,6 @@
     <div class="wrapper fadeInDown">
 
         <div id="formContent">
-                        
-    
-    
-       
     
                  <!-- Login Form -->
             <form lang="PT-BR">
