@@ -49,6 +49,8 @@
   
       <div id="formFooter">
         <a class="underlineHover" href="./page/register.php"> Don't have an account? Register!</a>
+        <br>
+        <a class="underlineHover" href="./page/updatePassword.php"> I forgot my password!</a>
       </div>
   
     </div>

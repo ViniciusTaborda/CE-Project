@@ -6,7 +6,7 @@
 	$name = trim($_POST["name"]);
     $email = trim($_POST["email"]);
 
-	$tituloEmail = "Confirm your e-mail at GVFilms!";
+	$tituloEmail = "Confirm your e-mail at AVFilms!";
 
 	$link = "http://localhost/CE-Project/php/setValid.php?email=$email";
 	$message = "Hey '$name'!Please click the link below to verify your account. <br><br> '$link'";
@@ -28,8 +28,6 @@
        
 	$mail->send();
 
-	// Configure o Gmail para permitir aplicativos de terceiro 
-	// https://myaccount.google.com/lesssecureapps
 
 
 ?>

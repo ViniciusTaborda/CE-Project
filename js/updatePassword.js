@@ -1,21 +1,30 @@
 $(document).ready(function(){
 
 
+    $("#button_send").click(function(){
+
+        if($("#input_email").val() != ""){
+            updatePassword();
+        }else{
+            $("#input_email").css("box-shadow", "0px 0px 5px 0px rgba(179,11,11,1)");
+
+        }
+    });
 
 });
 
-const entry_point = "http://localhost/CE-Project/";
+
+
 
 function updatePassword(){
 
-    let end_point = "php/updatePassword.php";
+    const entry_point = "http://localhost/CE-Project/";
+
+    let end_point = "php/emailPassword.php";
 
     var input_email = $("#input_email").val();
-    var hash_password = stringToHash($("#input_password").val());
-
 
     JSON_variables = {
-        name: input_name,
         email: input_email
         };
 
@@ -35,8 +44,8 @@ function updatePassword(){
 
     }).done(function() {
 
-        $("#modal_failed").replaceWith( `<div id="modal_failed_body" class="modal-body"> Erro: ${data}</div>`);
-        $("#modal_failed").modal('show');
+        $("#modal_email_sent").modal('show');
+        setTimeout(function(){ window.location = "../login.php"; }, 10000);
 
     });
 

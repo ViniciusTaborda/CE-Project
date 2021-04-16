@@ -18,11 +18,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="icon" href="../img/icon.png">
-
-    
 </head>
-
-
 
 <body>
 
@@ -70,7 +66,7 @@
         </div>
     </div>
      <!-- Modais -->
-     <div class="modal fade" id="modal_registered_successfully" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+     <div class="modal fade" id="modal_email_sent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
      <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
