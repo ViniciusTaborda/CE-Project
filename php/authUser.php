@@ -21,14 +21,27 @@
       }else{
           $sql = "SELECT * FROM user WHERE email = '$email' AND password = '$password' " ; // VERIFICA EMAIL E SENHA
           $result = $conn->query($sql); 
+          $resultado = mysqli_fetch_assoc($result);
 
           if (mysqli_num_rows($result) > 0){ // SE EXISTE EMAIL E SENHA NO BANCO
             $msgLogin = "OK";
             echo $msgLogin;
            $_SESSION['logado'] = true;
-          // header("Location: page/homePage.php");   
-              
+           $_SESSION['name'] = $resultado["name"];
+           $_SESSION['birth_date'] = $resultado["birth_date"]; 
+           $_SESSION['card_number'] = $resultado["card_number"]; 
+           $_SESSION['security_code'] = $resultado["security_code"]; 
+           $_SESSION['card_expiration_date'] = $resultado["card_expiration_date"]; 
+           $_SESSION['email'] = $resultado["email"]; 
+           $_SESSION['cardholder'] = $resultado["cardholder"]; 
+           $_SESSION['CPF_CNPJ'] = $resultado["CPF_CNPJ"]; 
+           $_SESSION['id'] = session_id();
 
+           //$_SESSION['inicio'] = time();
+           //$_SESSION['limite'] = 15;
+          // header("Location: page/homePage.php");   
+           //print_r($_SESSION);   
+ 
             }else{
                 $msgLogin = "incorrect";
                 echo $msgLogin;

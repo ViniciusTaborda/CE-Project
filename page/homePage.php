@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 if (!isset($_SESSION['logado'])) {
     header("Location: ../login.php");
     session_destroy();
@@ -50,6 +51,9 @@ if (isset($_GET['logoff'])) {
                         <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
                         <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Portfolio</a></li>
                         <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Contact</a></li>
+                        <li class="nav-item"><a href="editProfile.php" class="nav-link text-uppercase font-weight-bold"><img src="../img/edit1.png" /></a></li>
+                        <li class="nav-item"><a href="?logoff" class="nav-link text-uppercase font-weight-bold" ><img src="../img/logoff.png"/></a></li>
+
                     </ul>
                 </div>
             </div>
