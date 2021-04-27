@@ -1,93 +1,264 @@
-navbar {
-  transition: all 0.4s;
-}
-
-.navbar .nav-link {
-  color: rgb(0, 0, 0);
-}
-
-.navbar .nav-link:hover,
-.navbar .nav-link:focus {
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-}
-
-.navbar .navbar-brand {
-    color: rgb(0, 0, 0);
-}
+#div1 {background-color: #04323F;}
+#div2 {border: 2px solid #DCDCDC;}
+#div3.header {background-color: #04323F;}
+#div4 {background-color: #7D979D;}
+#div5 {background-color: #DCDCDC;}
+#div6 {background-color: #A9A9A9;}
+#div7 {background-color: black;}
 
 
-/* Change navbar styling on scroll */
-.navbar.active {
-    background-color: #56baed;
-    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.navbar.active .nav-link {
-  color: rgb(0, 0, 0);
-}
-
-.navbar.active .nav-link:hover,
-.navbar.active .nav-link:focus {
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-}
-
-.navbar.active .navbar-brand {
-  color: rgb(0, 0, 0);
-}
-
-.header{
-  background-color: #56baed;
-
-}
-
-header nav div button{
-  background-color: #56baed !important;
-
-}
-
-/* Change navbar styling on small viewports */
-@media (max-width: 991.98px) {
-    .navbar {
-        background: ghostwhite;
-    }
-
-    .navbar .navbar-brand, .navbar .nav-link {
-      color: rgb(0, 0, 0);
-    }
-}
-
-
-.mainDivFlex{
-  margin: 80px;
-
-
-
-}
-
-.mainDivFlex{
-  margin-top: 15px;
-  text-align: center;
-  
-
-
-}
-
-.cardsFilms{
-  float: left;
-  margin-left: 30px;
-  margin-bottom: 30px;
-  width: auto;
-  max-width: 400px;
+.div-1{ /*div corpo da pagina homePage*/
+  width: 100%;    
   height: auto;
-  max-height: 600px;
-  box-shadow: 0px 0px 5px 0px #56baed;
+  float: right;
+  align-items: center;
+  background-color: #04323F;
+}
+
+.div-3{ /*div corpo da pagina cadastro filme*/
+  width: 100%;    
+  height: 100%;
+  float: right;
+  align-items: center;
+  background-color: #A9A9A9;
+}
+
+.div-4{ /*div meio da pagina cadastro filme*/
+  width: 50%;    
+  height: 80%;
+  margin: 5%;
+  margin-right: 25%;
+  float: right;
+  align-items: center;
+  background-color: #DCDCDC;
+}
+
+.div-5{ /*div meio da pagina cadastro filme*/
+  width: 60%;    
+  height: 80%;
+  margin: 5%;
+  margin-left: 22%;
+  align-items: center;
+  background-color: #DCDCDC;
+}
+
+body{
+  margin: 0px;
+}
+
+a{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+
+
+.div-card{
+  align-items: center;
+  width: 300px;
+  height: 400px;
+  background-color:#5fbae9;
+  float: left;
+  margin: 5px;
+  padding: 5px;
+}
+
+.divImagem{
+  width: 100%;
+  height: 70%;
+}
+
+.divImagem img{
+  width: 100%;
+  height: 100%;
+}
+
+.card-Films{
+  margin-left: 200px;
+  margin-right: 200px;
+  width: 80%;    
+  height: auto;
+  float: left;
+    
+}
+
+.div-titulo{
+  width: 100%;
+  text-align: center;
+  font-family: arial bold;
+  color: #D3590F;
 
 }
 
-.mainCard{
+h7{
+  margin-top: 0px;
+  margin-bottom: 0px;
   margin: 0px;
-  }
+  font-weight: bold;
+  color: #D3590F;
+  font-size: 25;
+  text-align: center;
+}
+
+h8{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: bold;
+  color: white;
+  font-size: 25;
+  text-align: center;
+}
+
+.div-descricao{
+  width: 100%;
+  text-align: center;
+  font-size: 18;
+}
+
+.div-rodape{
+  width: 100%;
+  margin-top: 5px;
+}
 
 
+.form_register{
+
+  background-color: #f6f6f6;
+  border: none;
+  color: #0d0d0d;
+  padding: 05px 05px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  width: 85%;
+  border: 2px solid #f6f6f6;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.form_register1{
+
+background-color: #f6f6f6;
+border: none;
+color: #0d0d0d;
+padding: 05px 05px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 5px;
+width: 30%;
+border: 2px solid #f6f6f6;
+-webkit-transition: all 0.5s ease-in-out;
+-moz-transition: all 0.5s ease-in-out;
+-ms-transition: all 0.5s ease-in-out;
+-o-transition: all 0.5s ease-in-out;
+transition: all 0.5s ease-in-out;
+-webkit-border-radius: 5px 5px 5px 5px;
+border-radius: 5px 5px 5px 5px;
+
+}
+
+.form_register2{
+
+background-color: #f6f6f6;
+border: none;
+color: #0d0d0d;
+padding: 05px 05px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 5px;
+width: 86%;
+height: 20%;
+border: 2px solid #f6f6f6;
+-webkit-transition: all 0.5s ease-in-out;
+-moz-transition: all 0.5s ease-in-out;
+-ms-transition: all 0.5s ease-in-out;
+-o-transition: all 0.5s ease-in-out;
+transition: all 0.5s ease-in-out;
+-webkit-border-radius: 5px 5px 5px 5px;
+border-radius: 5px 5px 5px 5px;
+
+}
+
+.form_register3{
+
+background-color: #f6f6f6;
+border: none;
+color: #0d0d0d;
+padding: 05px 05px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 5px;
+width: 41.5%;
+border: 2px solid #f6f6f6;
+-webkit-transition: all 0.5s ease-in-out;
+-moz-transition: all 0.5s ease-in-out;
+-ms-transition: all 0.5s ease-in-out;
+-o-transition: all 0.5s ease-in-out;
+transition: all 0.5s ease-in-out;
+-webkit-border-radius: 5px 5px 5px 5px;
+border-radius: 5px 5px 5px 5px;
+
+}
+
+.form_register4{
+
+background-color: #f6f6f6;
+border: none;
+color: #0d0d0d;
+padding: 05px 05px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 5px;
+width: 40%;
+border: 2px solid #f6f6f6;
+-webkit-transition: all 0.5s ease-in-out;
+-moz-transition: all 0.5s ease-in-out;
+-ms-transition: all 0.5s ease-in-out;
+-o-transition: all 0.5s ease-in-out;
+transition: all 0.5s ease-in-out;
+-webkit-border-radius: 5px 5px 5px 5px;
+border-radius: 5px 5px 5px 5px;
+
+}
+
+.form_register5{
+
+background-color: #f6f6f6;
+border: none;
+color: #0d0d0d;
+padding: 05px 05px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 5px;
+width: 10%;
+border: 2px solid #f6f6f6;
+-webkit-transition: all 0.5s ease-in-out;
+-moz-transition: all 0.5s ease-in-out;
+-ms-transition: all 0.5s ease-in-out;
+-o-transition: all 0.5s ease-in-out;
+transition: all 0.5s ease-in-out;
+-webkit-border-radius: 5px 5px 5px 5px;
+border-radius: 5px 5px 5px 5px;
+
+}
