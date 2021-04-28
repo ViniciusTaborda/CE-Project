@@ -19,9 +19,9 @@
 	$mail->SMTPSecure = 'ssl';  
 	$mail->Host = 'smtp.gmail.com'; 
 	$mail->Port = 465; 
-	$mail->Username = 'vineeducostaa@gmail.com'; 
-	$mail->Password = 'hotweels123';
-	$mail->SetFrom('vineeducostaa@gmail.com', 'GVFilms');
+	$mail->Username = 'avfilms.tech@gmail.com'; 
+	$mail->Password = 'avfilms123';
+	$mail->SetFrom('avfilms.tech@gmail.com', 'GVFilms');
 	$mail->addAddress($email,'');
 	$mail->Subject = $tituloEmail;
 	$mail->msgHTML($message);

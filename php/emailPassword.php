@@ -20,7 +20,7 @@ $mail->Host = 'smtp.gmail.com';
 $mail->Port = 465; 
 $mail->Username = 'avfilms.tech@gmail.com'; 
 $mail->Password = 'avfilms123';
-$mail->SetFrom('vineeducostaa@gmail.com', 'GVFilms');
+$mail->SetFrom('avfilms.tech@gmail.com', 'GVFilms');
 $mail->addAddress($email,'');
 $mail->Subject = $tituloEmail;
 $mail->msgHTML($message);
