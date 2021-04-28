@@ -1,10 +1,10 @@
 <?php
 include "./config.php";
 
-$email = trim($_GET["email"]);
-$password = trim($_GET["password"]);
+$email = trim($_POST["email"]);
+$password = trim($_POST["password"]);
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, "", $dbname);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);

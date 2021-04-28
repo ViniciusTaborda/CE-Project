@@ -63,7 +63,7 @@ function updatePassword(){
 
     JSON_variables = {
         password: hash_password,
-        email: getUrlParameter(email)
+        email: getUrlParameter('email')
         };
 
     let url = `${entry_point}${end_point}`;
