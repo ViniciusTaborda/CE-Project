@@ -21,7 +21,7 @@ if (isset($_GET['logoff'])) {
     <link rel="icon" href="../img/icon.png">
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/selectMovie.js"></script>
-    <script type="text/javascript" src="../js/favoritos.js"></script>
+    <!--<script type="text/javascript" src="../js/favoritos.js"></script>-->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link href="../css/homePage.css" rel="stylesheet">
