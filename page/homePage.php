@@ -21,6 +21,7 @@ if (isset($_GET['logoff'])) {
     <link rel="icon" href="../img/icon.png">
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/selectMovie.js"></script>
+    <script type="text/javascript" src="../js/favoritos.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link href="../css/homePage.css" rel="stylesheet">
@@ -42,11 +43,11 @@ if (isset($_GET['logoff'])) {
                         <li class="nav-item active"><a href="#" class="nav-link text-uppercase font-weight-bold">Home <span class="sr-only">(current)</span></a></li>
                         <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">About</a></li>
                         <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Portfolio</a></li>
                         <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Contact</a></li>
                         <li class="nav-item"><a href="editProfile.php" class="nav-link text-uppercase font-weight-bold"><i class="far fa-sun"></i></a></li>
                         <li class="nav-item"><a href="?logoff" class="nav-link text-uppercase font-weight-bold" ><i class="fas fa-power-off"></i></a></li>
                         <li class="nav-item"><a href="insertMovie.php" class="nav-link text-uppercase font-weight-bold" ><i class="far fa-lightbulb"></i></i></a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold" ><i class="far fa-star"></i></i></a></li>
 
                     </ul>
                 </div>
