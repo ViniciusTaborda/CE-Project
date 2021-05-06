@@ -7,6 +7,27 @@
 #div7 {background-color: black;}
 
 
+modal-dialog {
+  max-width: 1000px;
+  margin: 30px auto;
+}
+
+.modal-body {
+position:relative;
+padding:0px;
+}
+
+.close {
+position:absolute;
+right:-30px;
+top:0;
+z-index:999;
+font-size:2rem;
+font-weight: normal;
+color:#fff;
+opacity:1;
+}
+
 .div-1{ /*div corpo da pagina homePage*/
   width: 100%;    
   height: auto;
@@ -261,6 +282,12 @@ transition: all 0.5s ease-in-out;
 -webkit-border-radius: 5px 5px 5px 5px;
 border-radius: 5px 5px 5px 5px;
 
+}
+
+.button_video{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 #colorInfo{

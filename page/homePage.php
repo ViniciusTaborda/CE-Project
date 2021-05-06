@@ -22,16 +22,17 @@ if (isset($_GET['logoff'])) {
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/selectMovie.js"></script>
     <!--<script type="text/javascript" src="../js/favoritos.js"></script>-->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link href="../css/homePage.css" rel="stylesheet">
-   <link rel="icon" href="../img/icon.png">
+    <link rel="icon" href="../img/icon.png">
 </head>
 
 <body>
 
 
-    
+
     <header class="header">
 
         <nav class="navbar navbar-expand-lg fixed-top py-3">
@@ -45,9 +46,9 @@ if (isset($_GET['logoff'])) {
                         <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
                         <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Contact</a></li>
                         <li class="nav-item"><a href="editProfile.php" class="nav-link text-uppercase font-weight-bold"><i class="far fa-sun"></i></a></li>
-                        <li class="nav-item"><a href="?logoff" class="nav-link text-uppercase font-weight-bold" ><i class="fas fa-power-off"></i></a></li>
-                        <li class="nav-item"><a href="insertMovie.php" class="nav-link text-uppercase font-weight-bold" ><i class="far fa-lightbulb"></i></i></a></li>
-                        <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold" ><i class="far fa-star"></i></i></a></li>
+                        <li class="nav-item"><a href="?logoff" class="nav-link text-uppercase font-weight-bold"><i class="fas fa-power-off"></i></a></li>
+                        <li class="nav-item"><a href="insertMovie.php" class="nav-link text-uppercase font-weight-bold"><i class="far fa-lightbulb"></i></i></a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold"><i class="far fa-star"></i></i></a></li>
 
                     </ul>
                 </div>
@@ -56,16 +57,43 @@ if (isset($_GET['logoff'])) {
     </header>
 
     <div class="div-1">
-    
+
         <div class="mainDivFlex">
         </div>
-        
+
         <br><br><br>
-        
+
         <div class="card-Films">
-        </div>    
-        
-    </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="video_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <!-- 16:9 aspect ratio -->
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always" allow="autoplay"></iframe>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
 
 </body>
 
