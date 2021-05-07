@@ -1,7 +1,7 @@
+var favoritos = [];
+
 $(document).ready(function(){
     select();
-    addfavorites();
-    
     
 });
 
@@ -19,7 +19,7 @@ function select(){
        // console.log(result);
 
         $(".card-Films").html("");
-     for (var i = 0; i < result.length; i++){ //meu array esta trazendo um tamanho de 3736 (????)
+     for (var i = 0; i < result.length; i++){ 
  
          var conteudo = "";
          conteudo += '<div class="div-card">';
@@ -35,9 +35,16 @@ function select(){
          conteudo += '</div>';
          conteudo += '<div class="div-descricao" ><b> ' + result[i][2] + ' - '  + result[i][3] +  ' - ' + result[i][4] + ' </b> <br>';
          conteudo += '<div class="div-descricao" ><b>' + result[i][5] + ' </b>';
-         conteudo += '<a href="#" <i id = "colorInfo" class="fas fa-info-circle"></i> </a>'
-         conteudo += '<a href="#" <i id = "colorPlay" class="fab fa-youtube"></i></i></a>'
-         conteudo += '<a href="#" <i id = "colorStar"class="far fa-star"></i></a>'
+         conteudo += '<did><a href="#" <i id = "colorInfo" class="fas fa-info-circle"></i> </a></did>'
+         conteudo += '<did><a href="#" <i id = "colorPlay" class="fab fa-youtube"></i></i></a></did>'
+
+         if (1 == result[i][0]){
+            conteudo += '<did><a href="#" <i id = "colorStar1"class="far fa-star estrela addFavoritos"></i></a></did>'
+            }   
+            else{
+                conteudo += '<did><a href="#" <i id = "colorStar"class="far fa-star estrela addFavoritos" ></i></a></did>'
+            }
+
          conteudo += '</div>';
          
          conteudo += '<div class="div-rodape">'; 
@@ -45,26 +52,31 @@ function select(){
          
          $(".card-Films").prepend(conteudo);
      }
-    });
-}
 
-
-
-function addfavorites(){
-    ($("#colorStar")).click(function(){
+     ($(".estrela")).click(function(){
         alert("oi");
-        let end_point = "php/insertFavorites.php";
+        var id = $(this).attr("addFavoritos");
+      
+        let end_point = "./php/insertFavorites.php";
         let url = `${entry_point}${end_point}`;
 
         $.ajax({
             url: url,
-            method: 'POST',
-            //data: JSON_variables,
+            method: 'GET',
             dataType: 'json'
+        }).done(function(resultFavorites){
+            console.log(resultFavorites);
     
-        }).done(function(result){
-            console.log(result);
-            });
+        })
+        
+    });
+    
+
 
     });
+   
 }
+
+
+
+    

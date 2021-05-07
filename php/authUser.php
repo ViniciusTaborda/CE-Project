@@ -35,7 +35,9 @@
            $_SESSION['email'] = $resultado["email"]; 
            $_SESSION['cardholder'] = $resultado["cardholder"]; 
            $_SESSION['CPF_CNPJ'] = $resultado["CPF_CNPJ"]; 
+           $_SESSION['idUser'] = $resultado["id"]; 
            $_SESSION['id'] = session_id();
+           
 
            //$_SESSION['inicio'] = time();
            //$_SESSION['limite'] = 15;
