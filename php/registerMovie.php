@@ -13,14 +13,15 @@
     trim($synopsis = $_POST["synopsis"]);
     trim($trailer = $_POST["trailer"]);
     trim($image = $_POST["image"]);
+    trim($typeVideo = $_POST["typeVideo"]);
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
         exit;
     }
 
-    $sql = "INSERT INTO films (title, genre, year, length, relevance, synopsis, trailer, image)
-    VALUES ('$title', '$genre', '$year', '$length', '$relevance', '$synopsis', '$trailer', '$image')";
+    $sql = "INSERT INTO films (title, genre, year, length, relevance, synopsis, trailer, image, typeVideo)
+    VALUES ('$title', '$genre', '$year', '$length', '$relevance', '$synopsis', '$trailer', '$image', '$typeVideo')";
     
     $result = $conn->prepare($sql); 
     
@@ -33,7 +34,6 @@
         
         $diretorio = './img/' . $ultimoId.'/';
         echo json_encode($ultimoId);
-
         mkdir($diretorio, 0755);
         move_uploaded_file($_FILES['image'], $diretorio);
 */

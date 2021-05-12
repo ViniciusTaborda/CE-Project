@@ -24,7 +24,7 @@ if (isset($_GET['logoff'])) {
     <title>Av Films</title>
     <link rel="icon" href="../img/icon.png">
     <script type="text/javascript" src="../js/jquery.js"></script>
-    <script type="text/javascript" src="../js/selectMovie.js"></script>
+    <script type="text/javascript" src="../js/selectFavorites.js"></script>
     <!--<script type="text/javascript" src="../js/favoritos.js"></script>-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -40,16 +40,15 @@ if (isset($_GET['logoff'])) {
     <header class="header">
 
         <nav class="navbar navbar-expand-lg fixed-top py-3">
-            <div class="container"><a href="#" class="navbar-brand text-uppercase font-weight-bold">Av Films</a>
+            <div class="container"><a href="#" class="navbar-brand text-uppercase font-weight-bold">Favorites</a>
                 <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
 
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="homePage.php" class="nav-link text-uppercase font-weight-bold"><i class="fas fa-home"></i></a></li>
                         <li class="nav-item"><a href="editProfile.php" class="nav-link text-uppercase font-weight-bold"><i class="far fa-sun"></i></a></li>
-                        <li class="nav-item"><a href="?logoff" class="nav-link text-uppercase font-weight-bold"><i class="fas fa-power-off"></i></a></li>
                         <li class="nav-item"><a href="insertMovie.php" class="nav-link text-uppercase font-weight-bold"><i class="far fa-lightbulb"></i></i></a></li>
-                        <li class="nav-item"><a href="favorites.php" class="nav-link text-uppercase font-weight-bold"><i class="far fa-star"></i></i></a></li>
+                        <li class="nav-item"><a href="?logoff" class="nav-link text-uppercase font-weight-bold"><i class="fas fa-power-off"></i></a></li>
 
                     </ul>
                 </div>
@@ -61,10 +60,22 @@ if (isset($_GET['logoff'])) {
 
         <div class="mainDivFlex">
         </div>
-
+        
         <br><br><br>
+        <div class="div-1" style='text-align:center'>
+            <h9> Filmes </h9>
+        </div>
+        
+        <div class="card-Favorites-Movie">
+       
+        </div>
 
-        <div class="card-Films">
+        
+        <div style='text-align:center'>
+            <h9> Séries </h9>
+        </div>
+        
+        <div class="card-Favorites-Serie">
        
         </div>
 

@@ -99,10 +99,28 @@ a:hover{
 }
 
 .card-Films{
+  margin-left: 190px;
+  margin-right: 200px;
+  width: 80%;    
+  height: auto;
+  float: left;
+    
+}
+
+.card-Favorites-Movie{
   margin-left: 200px;
   margin-right: 200px;
   width: 80%;    
   height: auto;
+  float: left;
+    
+}
+
+.card-Favorites-Serie{
+  margin-left: 200px;
+  margin-right: 200px;
+  width: 80%;    
+  height: 100%;
   float: left;
     
 }
@@ -119,7 +137,8 @@ h7{
   margin-top: 0px;
   margin-bottom: 0px;
   margin: 0px;
-  font-weight: bold;
+  font-weight: 400;
+  font-family: 'arial';
   color: #D3590F;
   font-size: 25;
   text-align: center;
@@ -128,9 +147,19 @@ h7{
 h8{
   margin-top: 0px;
   margin-bottom: 0px;
-  font-weight: bold;
+  font-weight: 400;
+  font-family: 'arial';
   color: white;
   font-size: 25;
+  text-align: center;
+}
+
+h9{
+  margin-top: 10px;
+  font-weight: 400;
+  font-family: 'arial';
+  color: red;
+  font-size: 30;
   text-align: center;
 }
 
@@ -296,4 +325,7 @@ border-radius: 5px 5px 5px 5px;
 
 #colorPlay{
   color: red;
+}
+.colorStar{
+  color: yellow;
 }

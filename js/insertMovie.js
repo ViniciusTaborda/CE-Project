@@ -29,6 +29,7 @@ function saveMovei(){
     var synopsis = $("#synopsis").val();
     var trailer = $("#trailer").val();
     var image = $("#image").val();
+    var typeVideo = $("#typeVideo").val();
 
     JSON_variables = {
         title: title,
@@ -38,7 +39,8 @@ function saveMovei(){
         relevance: relevance,
         synopsis: synopsis,
         trailer: trailer,
-        image: image
+        image: image,
+        typeVideo:typeVideo
         };
 
     let url = `${entry_point}${end_point}`;

@@ -45,7 +45,13 @@
                 <input type= "text" name= "genre" id="genre" class="form_register3" placeholder = "Gênero"> 
                 <input type= "number" name= "year" id="year" class="form_register3" placeholder = "Ano">   
                 <input type= "time" name= "length" id="length" class="form_register3" placeholder = "Duração">
-                <input type= "text" number= "relevance" id="relevance" class="form_register3" placeholder = "Relevância">
+                <input type= "text" name= "relevance" id="relevance" class="form_register3" placeholder = "Relevância">
+                
+                <!-- O segundo valor estará selecionado inicialmente-->
+                    <select id="typeVideo" class="form_register">
+                    <option type = "text" value="Filme" selected>Filme</option>
+                    <option type = "text" value="Série">Série</option>
+                    </select>
                 <input type= "text" name= "synopsis" id="synopsis" class="form_register2" placeholder = "Sinopse"> <br><br>        
                 <input type= "url" name= "trailer" id="trailer" class="form_register" placeholder = "Trailer"> <br><br>        
                 <input type= "file" name= "image" id="image" > <br><br>
