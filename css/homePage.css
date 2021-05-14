@@ -334,6 +334,12 @@ border-radius: 5px 5px 5px 5px;
   cursor: pointer;
 }
 
+.button_star{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 #colorInfo{
   color: black;
 }
@@ -343,4 +349,12 @@ border-radius: 5px 5px 5px 5px;
 }
 .colorStar{
   color: yellow;
+  cursor: pointer;
+}
+.colorStarF{
+  color: yellow;
+  cursor: pointer;
+}
+.star{
+  cursor: pointer;
 }

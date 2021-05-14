@@ -81,7 +81,8 @@ function select() {
                             <div class="fav-star"><button type="button" id="button_video" class="button_video" data-toggle="modal" data-src="${result[i][7]}" data-target="#video_modal">
                             <i id = "colorPlay" class="fab fa-youtube"></i></button> </div>`
 
-                conteudo += `<div id="${result[i][0]}" class="fav-star"> <i id = "${result[i][0]}"class="far fa-star star name=id" "></i></div>
+            conteudo += `<div id="${result[i][0]}" class="fav-star"> <button type="button" class="button_star">
+                            <i id = "${result[i][0]}"class="far fa-star star name=id" "></i></button></div>
                             </div>
                             <div class="div-rodape"></div>`;
 
@@ -140,6 +141,8 @@ function favoritar(){
         }).done(function(result){
             console.log(result);
             });
+            window.location.reload();
+
     });
 
 }

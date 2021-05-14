@@ -53,10 +53,10 @@ function selectFavorites() {
         method: 'GET',
         dataType: 'json'
     }).done(function (result) {
-        console.log(result);
+        //console.log(result);
 
-        listarFavoritos("movie", result);
-        favoritar();
+        listarFavoritos("movie", result, "colorStarF");
+        favoritar("colorStarF");
      });
 
     
@@ -72,54 +72,61 @@ function selectFavoritesSerie() {
         method: 'GET',
         dataType: 'json'
     }).done(function (result) {
-        console.log(result);
+       // console.log(result);
     
-        listarFavoritos("serie", result);
-        favoritar();
+        listarFavoritos("serie", result, "colorStar");
+        favoritar("colorStar");
 
      });
 
     
 }
 
-function listarFavoritos(filme, bancoFilme){
+function listarFavoritos(filme, bancoFilme, colorStar){
     $(".card-Favorites-"+filme).html("");
-    for (var i = 0; i < bancoFilme.length; i++) { 
-        
-        var base = bancoFilme[i][8].replace("C:fakepath", "");
-        var conteudo = "";
-        conteudo += `<div class="div-card">
-                        <div class="divImagem">
-                            <img src="../img/filmes/${base}">
-                        </div>
-                        <div class="div-titulo"><br>
-                            <h7>${bancoFilme[i][1]}</h7>
-                        </div>
-                        <div class="div-descricao" ><b> ${bancoFilme[i][2]} - ${bancoFilme[i][3]} - ${bancoFilme[i][4]}</b> <br>
-                        <div class="fav-star"><b> ${bancoFilme[i][5]}</b></div>
-                        
-                        <div class="fav-star"><button type="button" id="button_info" data-toggle="modal"data-info="${bancoFilme[i][6]}" data-target="#info_modal">
-                        <i id = "colorInfo" class="fas fa-info-circle"></i> </button></button ></div>                                
+    console.log(bancoFilme.length);
+    if (bancoFilme.length <23){
+        for (var i = 0; i < bancoFilme.length; i++) { 
+            
+            var base = bancoFilme[i][8].replace("C:fakepath", "");
+            var conteudo = "";
+            conteudo += `<div class="div-card">
+                            <div class="divImagem">
+                                <img src="../img/filmes/${base}">
+                            </div>
+                            <div class="div-titulo"><br>
+                                <h7>${bancoFilme[i][1]}</h7>
+                            </div>
+                            <div class="div-descricao" ><b> ${bancoFilme[i][2]} - ${bancoFilme[i][3]} - ${bancoFilme[i][4]}</b> <br>
+                            <div class="fav-star"><b> ${bancoFilme[i][5]}</b></div>
+                            
+                            <div class="fav-star"><button type="button" id="button_info" data-toggle="modal"data-info="${bancoFilme[i][6]}" data-target="#info_modal">
+                            <i id = "colorInfo" class="fas fa-info-circle"></i> </button></button ></div>                                
 
-                        <div class="fav-star"><button type="button" id="button_video" class="button_video" data-toggle="modal" data-src="${bancoFilme[i][7]}" data-target="#video_modal">
-                        <i id = "colorPlay" class="fab fa-youtube"></i></button> </div>`
+                            <div class="fav-star"><button type="button" id="button_video" class="button_video" data-toggle="modal" data-src="${bancoFilme[i][7]}" data-target="#video_modal">
+                            <i id = "colorPlay" class="fab fa-youtube"></i></button> </div>`
 
-            conteudo += `<div id="${bancoFilme[i][0]}" class="fav-star"> <i id = "${bancoFilme[i][0]}"class="far fa-star colorStar star name=id" "></i></div>
-                        </div>
-                        <div class="div-rodape"></div>`;
+                conteudo += `<div id="${bancoFilme[i][0]}" class="fav-star"> <button type="button" class="button_star">
+                <i id = "${bancoFilme[i][0]}"class="far fa-star  ` + colorStar + ` star name=id" "></i></button></div>
+                            </div>
+                            <div class="div-rodape"></div>`;
+            
+            $(".card-Favorites-"+filme).prepend(conteudo);
         
-        $(".card-Favorites-"+filme).prepend(conteudo);
-    
+        }
+    }else{
+        console.log("filme não encontrado")
     }
 }
 
-function favoritar(){
+function favoritar(colorStar){
 
-    ($(".colorStar")).click(function(){
+    ($("." + colorStar)).click(function(){
         var id = this.id;
         let end_point = "./php/insertFavorites.php";
         let url = `${entry_point}${end_point}`;
-        console.log("delete movie")
+        //alert("desfavoritei");
+        console.log("desfavoritei")
         JSON_variables = {
             idFilm: id,
         }
@@ -131,8 +138,10 @@ function favoritar(){
             dataType: 'json',
 
         }).done(function(result){
-            console.log(result);
+//            console.log(result);
             });
+
+            window.location.reload();    
     });
 
 }
