@@ -25,17 +25,18 @@ if (isset($_GET['logoff'])) {
     <link rel="icon" href="../img/icon.png">
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/selectMovie.js"></script>
+    
     <!--<script type="text/javascript" src="../js/favoritos.js"></script>-->
+    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link href="../css/homePage.css" rel="stylesheet">
     <link rel="icon" href="../img/icon.png">
+    
 </head>
 
 <body>
-
-
 
     <header class="header">
 
@@ -82,7 +83,6 @@ if (isset($_GET['logoff'])) {
                             <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always" allow="autoplay"></iframe>
                         </div>
 
-
                     </div>
 
                 </div>
@@ -91,8 +91,21 @@ if (isset($_GET['logoff'])) {
 
 
 
+              <!-- Modal -->
+            <div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel"></h4>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    
+                </div>
 
-
+                </div>
+            </div>
+            </div>
 
 
 

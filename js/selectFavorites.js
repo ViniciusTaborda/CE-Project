@@ -30,6 +30,15 @@ $(document).ready(function () {
         $("#video").attr('src', $videoSrc);
     })
 
+        // mais informações filme
+    
+    $(document).on("click", "#button_info", function(){
+        $infoFilme = $(this).data("info");
+
+        $("#modalId").modal('show');
+        $("#modalBody").html($infoFilme);
+    });
+
 });
 
 var registerError = false;
@@ -45,35 +54,9 @@ function selectFavorites() {
         dataType: 'json'
     }).done(function (result) {
         console.log(result);
-    
 
-       $(".card-Favorites-Movie").html("");
-        for (var i = 0; i < result.length; i++) { 
-            
-            var base = result[i][8].replace("C:fakepath", "");
-            var conteudo = "";
-            conteudo += `<div class="div-card">
-                            <div class="divImagem">
-                                <img src="../img/filmes/${base}">
-                            </div>
-                            <div class="div-titulo"><br>
-                                <h7>${result[i][1]}</h7>
-                            </div>
-                            <div class="div-descricao" ><b> ${result[i][2]} - ${result[i][3]} - ${result[i][4]}</b> <br>
-                            <div class="div-descricao" ><b> ${result[i][5]}</b>
-                            <a href="#" <i id = "colorInfo" class="fas fa-info-circle"></i> </a>
-                            <button type="button" id="button_video" class="button_video" data-toggle="modal" data-src="${result[i][7]}" data-target="#video_modal">
-                            <i id = "colorPlay" class="fab fa-youtube"></i>  </button>
-                            </div>
-                            <div class="div-rodape"></div>`;
-
-            
-            $(".card-Favorites-Movie").prepend(conteudo);
-
-                            
-        }
-
-
+        listarFavoritos("movie", result);
+        favoritar();
      });
 
     
@@ -91,38 +74,69 @@ function selectFavoritesSerie() {
     }).done(function (result) {
         console.log(result);
     
-
-       $(".card-Favorites-serie").html("");
-        for (var i = 0; i < result.length; i++) { 
-            
-            var base = result[i][8].replace("C:fakepath", "");
-            var conteudo = "";
-            conteudo += `<div class="div-card">
-                            <div class="divImagem">
-                                <img src="../img/filmes/${base}">
-                            </div>
-                            <div class="div-titulo"><br>
-                                <h7>${result[i][1]}</h7>
-                            </div>
-                            <div class="div-descricao" ><b> ${result[i][2]} - ${result[i][3]} - ${result[i][4]}</b> <br>
-                            <div class="div-descricao" ><b> ${result[i][5]}</b>
-                            <a href="#" <i id = "colorInfo" class="fas fa-info-circle"></i> </a>
-                            <button type="button" id="button_video" class="button_video" data-toggle="modal" data-src="${result[i][7]}" data-target="#video_modal">
-                            <i id = "colorPlay" class="fab fa-youtube"></i>  </button>
-                            </div>
-                            <div class="div-rodape"></div>`;
-
-            
-            $(".card-Favorites-serie").prepend(conteudo);
-
-                            
-        }
-
+        listarFavoritos("serie", result);
+        favoritar();
 
      });
 
     
 }
+
+function listarFavoritos(filme, bancoFilme){
+    $(".card-Favorites-"+filme).html("");
+    for (var i = 0; i < bancoFilme.length; i++) { 
+        
+        var base = bancoFilme[i][8].replace("C:fakepath", "");
+        var conteudo = "";
+        conteudo += `<div class="div-card">
+                        <div class="divImagem">
+                            <img src="../img/filmes/${base}">
+                        </div>
+                        <div class="div-titulo"><br>
+                            <h7>${bancoFilme[i][1]}</h7>
+                        </div>
+                        <div class="div-descricao" ><b> ${bancoFilme[i][2]} - ${bancoFilme[i][3]} - ${bancoFilme[i][4]}</b> <br>
+                        <div class="fav-star"><b> ${bancoFilme[i][5]}</b></div>
+                        
+                        <div class="fav-star"><button type="button" id="button_info" data-toggle="modal"data-info="${bancoFilme[i][6]}" data-target="#info_modal">
+                        <i id = "colorInfo" class="fas fa-info-circle"></i> </button></button ></div>                                
+
+                        <div class="fav-star"><button type="button" id="button_video" class="button_video" data-toggle="modal" data-src="${bancoFilme[i][7]}" data-target="#video_modal">
+                        <i id = "colorPlay" class="fab fa-youtube"></i></button> </div>`
+
+            conteudo += `<div id="${bancoFilme[i][0]}" class="fav-star"> <i id = "${bancoFilme[i][0]}"class="far fa-star colorStar star name=id" "></i></div>
+                        </div>
+                        <div class="div-rodape"></div>`;
+        
+        $(".card-Favorites-"+filme).prepend(conteudo);
+    
+    }
+}
+
+function favoritar(){
+
+    ($(".colorStar")).click(function(){
+        var id = this.id;
+        let end_point = "./php/insertFavorites.php";
+        let url = `${entry_point}${end_point}`;
+        console.log("delete movie")
+        JSON_variables = {
+            idFilm: id,
+        }
+
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: JSON_variables,
+            dataType: 'json',
+
+        }).done(function(result){
+            console.log(result);
+            });
+    });
+
+}
+
 
 
 

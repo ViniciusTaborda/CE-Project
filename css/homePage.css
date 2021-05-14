@@ -46,7 +46,7 @@ opacity:1;
 
 .div-4{ /*div meio da pagina cadastro filme*/
   width: 50%;    
-  height: 80%;
+  height: 85%;
   margin: 5%;
   margin-right: 25%;
   float: right;
@@ -76,6 +76,13 @@ a:hover{
   text-decoration: underline;
 }
 
+.fav-star{
+  margin: 5px;
+  padding: 5px;
+  float: left;
+  align-items: center;
+}
+
 
 
 .div-card{
@@ -86,6 +93,13 @@ a:hover{
   float: left;
   margin: 5px;
   padding: 5px;
+}
+
+.div-descricao{
+  width: 100%;
+  text-align: center;
+  font-size: 18;
+  
 }
 
 .divImagem{
@@ -163,11 +177,6 @@ h9{
   text-align: center;
 }
 
-.div-descricao{
-  width: 100%;
-  text-align: center;
-  font-size: 18;
-}
 
 .div-rodape{
   width: 100%;
@@ -314,6 +323,12 @@ border-radius: 5px 5px 5px 5px;
 }
 
 .button_video{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#button_info{
   background-color: transparent;
   border: none;
   cursor: pointer;

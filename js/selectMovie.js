@@ -2,6 +2,8 @@
 $(document).ready(function () {
     select();
     
+    
+    
 
     // Gets the video src from the data-src on each button
 
@@ -30,6 +32,18 @@ $(document).ready(function () {
         $("#video").attr('src', $videoSrc);
     })
 
+
+    // mais informações filme
+    
+    $(document).on("click", "#button_info", function(){
+        $infoFilme = $(this).data("info");
+
+        $("#modalId").modal('show');
+        $("#modalBody").html($infoFilme);
+    });
+
+
+
 });
 
 var registerError = false;
@@ -43,7 +57,7 @@ function select() {
         method: 'GET',
         dataType: 'json'
     }).done(function (result) {
-        //console.log(result);
+        console.log(result);
 
         $(".card-Films").html("");
         for (var i = 0; i < result.length; i++) { 
@@ -58,71 +72,76 @@ function select() {
                                 <h7>${result[i][1]}</h7>
                             </div>
                             <div class="div-descricao" ><b> ${result[i][2]} - ${result[i][3]} - ${result[i][4]}</b> <br>
-                            <div class="div-descricao" ><b> ${result[i][5]}</b>
-                            <a href="#" <i id = "colorInfo" class="fas fa-info-circle"></i> </a>
-                            <button type="button" id="button_video" class="button_video" data-toggle="modal" data-src="${result[i][7]}" data-target="#video_modal">
-                            <i id = "colorPlay" class="fab fa-youtube"></i>  </button>`
-
-                conteudo += `<i id = "${result[i][0]}"class="far fa-star star addFavoritos" name=id" "></i>
-                                </div>
-                                <div class="div-rodape"></div>`;
-
-            
-     /*       if (result[i][10] == 0){
-                conteudo += `<i id = "${result[i][0]}"class="far fa-star star addFavoritos name=id" "></i>
-                                </div>
-                                <div class="div-rodape"></div>`;
-            }else{
-                conteudo += `<i id = "${result[i][0]}"class="far fa-star star colorStar addFavoritos name=id" "></i>
-                </div>
-                <div class="div-rodape"></div>`;
-            }*/
-            
-            $(".card-Films").prepend(conteudo);
-
                             
+                            <div class="fav-star"><b> ${result[i][5]}</b></div>
+                            
+                            <div class="fav-star"><button type="button" id="button_info" data-toggle="modal"data-info="${result[i][6]}" data-target="#info_modal">
+                            <i id = "colorInfo" class="fas fa-info-circle"></i> </button></button ></div>                                
+
+                            <div class="fav-star"><button type="button" id="button_video" class="button_video" data-toggle="modal" data-src="${result[i][7]}" data-target="#video_modal">
+                            <i id = "colorPlay" class="fab fa-youtube"></i></button> </div>`
+
+                conteudo += `<div id="${result[i][0]}" class="fav-star"> <i id = "${result[i][0]}"class="far fa-star star name=id" "></i></div>
+                            </div>
+                            <div class="div-rodape"></div>`;
+
+
+
+                            $(".card-Films").prepend(conteudo);
+                            selectFavoritos(result[i][0]);
         }
+        favoritar();
 
-        ($(".star")).click(function(){
-            var id = this.id;
-            let end_point = "./php/insertFavorites.php";
-            let url = `${entry_point}${end_point}`;
 
-            JSON_variables = {
-                idFilm: id,
-            }
+        //$(".div-descricao").find("#35").html('<div id="${result[i][0]}"<i class="far fa-star colorStar star name=id" "></i></div>');
 
-            $.ajax({
-                url: url,
-                type: 'POST',
-                data: JSON_variables,
-                dataType: 'json',
-
-            }).done(function(result){
-                console.log(result);
-                });
-        });
      });
-
-    
+     
 }
 
-function selectFavoritos(){
-            let end_point = "./php/insertFavorites.php";
+function selectFavoritos(id){
+            let end_point = "./php/selectFavorites.php";
             let url = `${entry_point}${end_point}`;
+            
             $.ajax({
                 url: url,
                 method: 'GET',
                 dataType: 'json'
             }).done(function(resultFavorites){
                 for (var i = 0; i < resultFavorites.length; i++) { 
-                    arrayCarrinho.push(resultFavorites[i]);
+                    if (id == resultFavorites[i][0]){
+                        $(".div-descricao").find("#" + id).html('<i id = "' + id + '"class="far fa-star colorStar star name=id" "></i>');
+                        
+                    }
                 }
-                //console.log(resultFavorites);
+
+                
             });
-            return arrayCarrinho;
+
 }
 
+function favoritar(){
 
+    ($(".star")).click(function(){
+        var id = this.id;
+        let end_point = "./php/insertFavorites.php";
+        let url = `${entry_point}${end_point}`;
+        
+        JSON_variables = {
+            idFilm: id,
+        }
+
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: JSON_variables,
+            dataType: 'json',
+
+        }).done(function(result){
+            console.log(result);
+            });
+    });
+
+}
 
 
