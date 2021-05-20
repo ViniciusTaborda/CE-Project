@@ -48,10 +48,9 @@ if (isset($_GET['logoff'])) {
                     <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="homePage.php" class="nav-link text-uppercase font-weight-bold"><i class="fas fa-home"></i></a></li>
                         <li class="nav-item"><a href="editProfile.php" class="nav-link text-uppercase font-weight-bold"><i class="far fa-sun"></i></a></li>
-                        <li class="nav-item"><a href="?logoff" class="nav-link text-uppercase font-weight-bold"><i class="fas fa-power-off"></i></a></li>
                         <li class="nav-item"><a href="insertMovie.php" class="nav-link text-uppercase font-weight-bold"><i class="far fa-lightbulb"></i></i></a></li>
                         <li class="nav-item"><a href="favorites.php" class="nav-link text-uppercase font-weight-bold"><i class="far fa-star"></i></i></a></li>
-
+                        <li class="nav-item"><a href="?logoff" class="nav-link text-uppercase font-weight-bold"><i class="fas fa-power-off"></i></a></li>
                     </ul>
                 </div>
             </div>

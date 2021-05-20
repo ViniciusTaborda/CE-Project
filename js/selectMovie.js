@@ -141,7 +141,7 @@ function favoritar(){
         }).done(function(result){
             console.log(result);
             });
-            window.location.reload();
+           // window.location.reload();
 
     });
 

@@ -4,7 +4,7 @@
     include "../php/config.php";
     $conn = new mysqli($servername, $username, $password, $dbname);
     
-    if (!isset($_SESSION['logado'])){
+    if (!isset($_SESSION['logado']) AND $_SESSION['is_admin'] = true ){
         header("Location: ../login.php");   
         session_destroy();
     }

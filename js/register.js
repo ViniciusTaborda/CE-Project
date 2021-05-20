@@ -181,7 +181,7 @@ function authLogin(){
         let url = `${entry_point}${end_point}`;
         
         $.post(url, JSON_variables, function(data) {
-            //console.log(data);
+           // console.log(data);
  
         if (data === "empty"){
             $("#alertLogin").html("");

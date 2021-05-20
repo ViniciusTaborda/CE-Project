@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14-Maio-2021 às 05:17
+-- Tempo de geração: 21-Maio-2021 às 01:40
 -- Versão do servidor: 8.0.23
 -- versão do PHP: 8.0.3
 
@@ -38,12 +38,15 @@ CREATE TABLE `favorites` (
 --
 
 INSERT INTO `favorites` (`idfavorites`, `idFilm`, `idUser`) VALUES
-(25, 26, 3),
-(30, 28, 3),
-(31, 30, 3),
-(164, 31, 59),
-(165, 22, 59),
-(168, 35, 59);
+(215, 35, 59),
+(217, 31, 59),
+(218, 28, 59),
+(228, 36, 3),
+(231, 31, 3),
+(232, 26, 3),
+(234, 26, 59),
+(235, 36, 59),
+(236, 30, 59);
 
 -- --------------------------------------------------------
 
@@ -75,7 +78,8 @@ INSERT INTO `films` (`id`, `title`, `genre`, `year`, `length`, `relevance`, `syn
 (28, 'A Bela e a Fera', 'Fantasia', 2017, '02:09:00', '80%', 'Em A Bela e a Fera, moradora de uma pequena aldeia francesa, Bela (Emma Watson) tem o pai capturado pela Fera (Dan Stevens) e decide entregar sua vida ao estranho ser em troca da liberdade dele. No castelo, ela conhece objetos mágicos e descobre que a Fera é, na verdade, um príncipe que precisa de amor para voltar à forma humana.', 'https://www.youtube.com/embed/yzHuQPgO3Gs', 'C:fakepath9.jpg', 'Filme'),
 (30, 'Rambo: Até o Fim', 'Ação', 2019, '01:40:00', '75%', 'Rambo: Até o Fim se passa décadas depois de John Rambo (Sylvester Stallone) ter lutado contra seus inimigos. Agora, ele encontrou a paz em um rancho na fronteira entre os Estados Unidos e o México. Lá ele ajuda Maria Beltran (Adriana Barraza) a criar a neta Gabrielle (Yvette Monreal), que o trata com imenso carinho. Decidida a encontrar o pai, que a abandonou ainda criança, ela conta com a ajuda de uma amiga que agora vive no México para localizá-lo. Mesmo contra a vontade da avó e de Rambo, Gabrielle parte escondida para o país vizinho e, após ser dispensada pelo próprio pai, acaba vendida para uma gangue que gerencia prostitutas. Alertado sobre o que aconteceu, Rambo decide ir até o Mèxico para salvá-la.', 'https://www.youtube.com/embed/bk4E0Rl2cns', 'C:fakepath7.jpg', 'Filme'),
 (31, 'The Avengers', 'Ficção', 2012, '02:23:00', '96%', 'Loki (Tom Hiddleston) retorna à Terra enviado pelos chitauri, uma raça alienígena que pretende dominar os humanos. Com a promessa de que será o soberano do planeta, ele rouba o cubo cósmico dentro de instalações da S.H.I.E.L.D. e, com isso, adquire grandes poderes. Loki os usa para controlar o dr. Erik Selvig (Stellan Skarsgard) e Clint Barton/Gavião Arqueiro (Jeremy Renner), que passam a trabalhar para ele. No intuito de contê-los, Nick Fury (Samuel L. Jackson) convoca um grupo de pessoas com grandes habilidades, mas que jamais haviam trabalhado juntas: Tony Stark/Homem de Ferro (Robert Downey Jr.), Steve Rogers/Capitão América (Chris Evans), Thor (Chris Hemsworth), Bruce Banner/Hulk (Mark Ruffalo) e Natasha Romanoff/Viúva Negra (Scarlett Johansson). Só que, apesar do grande perigo que a Terra corre, não é tão simples assim conter o ego e os interesses de cada um deles para que possam agir em grupo.', 'https://www.youtube.com/embed/6Y6zOSn8ff4', 'C:fakepath12.jpg', 'Filme'),
-(35, 'Dark', 'Suspense', 2017, '13:00:00', '85%', 'Em 2019, o desaparecimento de um menino gera medo entre os moradores de Winden, uma pequena cidade alemã com uma história estranha e trágica.', 'https://www.youtube.com//embed/MSXxmcdJClc', 'C:fakepath13.jpg', 'Série');
+(35, 'Dark', 'Suspense', 2017, '13:00:00', '85%', 'Em 2019, o desaparecimento de um menino gera medo entre os moradores de Winden, uma pequena cidade alemã com uma história estranha e trágica.', 'https://www.youtube.com//embed/MSXxmcdJClc', 'C:fakepath13.jpg', 'Série'),
+(36, 'Friends', 'Comédia', 1994, '23:00:00', '99%', 'Ross, Rachel, Mônica, Chandler, Joey e Phoebe formam um grupo de seis amigos que lutam para se sobressair e progredir na competitiva vida de Manhattan. ... Seu humor inteligente e apoio mútuo incondicional fazem com sua amizade seja cada vez mais forte, superando assim todos os obstáculos que a vida lhes apresenta.', 'https://www.youtube.com/embed/hDNNmeeJs1Q', 'C:fakepath14.jpg', 'Série');
 
 -- --------------------------------------------------------
 
@@ -220,7 +224,7 @@ CREATE TABLE `pma__recent` (
 --
 
 INSERT INTO `pma__recent` (`username`, `tables`) VALUES
-('root', '[{\"db\":\"user_project\",\"table\":\"films\"},{\"db\":\"user_project\",\"table\":\"favorites\"},{\"db\":\"user_project\",\"table\":\"user\"}]');
+('root', '[{\"db\":\"user_project\",\"table\":\"user\"},{\"db\":\"user_project\",\"table\":\"films\"},{\"db\":\"user_project\",\"table\":\"favorites\"}]');
 
 -- --------------------------------------------------------
 
@@ -334,7 +338,7 @@ CREATE TABLE `pma__userconfig` (
 --
 
 INSERT INTO `pma__userconfig` (`username`, `timevalue`, `config_data`) VALUES
-('root', '2021-05-13 23:28:01', '{\"lang\":\"pt\",\"Console\\/Mode\":\"collapse\"}');
+('root', '2021-05-20 23:14:14', '{\"lang\":\"pt\",\"Console\\/Mode\":\"collapse\"}');
 
 -- --------------------------------------------------------
 
@@ -376,18 +380,20 @@ CREATE TABLE `user` (
   `security_code` varchar(3) NOT NULL,
   `cardholder` varchar(128) NOT NULL,
   `CPF_CNPJ` varchar(15) NOT NULL,
-  `is_valid` tinyint(1) NOT NULL DEFAULT '0'
+  `is_valid` tinyint(1) NOT NULL DEFAULT '0',
+  `is_admin` tinyint(1) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `user`
 --
 
-INSERT INTO `user` (`id`, `name`, `birth_date`, `email`, `password`, `card_number`, `card_expiration_date`, `security_code`, `cardholder`, `CPF_CNPJ`, `is_valid`) VALUES
-(1, 'Vinicius Eduardo Taborda Costa', '2001-11-23', 'vinicius.costa@gmail.com', '0cc175b9c0f1b6a831c399e269772661', '11122233334444', '2030-01-01', '123', 'VINICIUS E. T. COSTA', '12427904970', 0),
-(2, 'vinicius', '2021-03-19', 'vinicius.taborda.costa@gmail.com', '46070d4bf934fb0d4b06d9e2c46e346944e322444900a435d7d9a95e6d7435f5', '111111', '2002-10-01', '', 'agatha', '111111111', 0),
-(3, 'Agatha Cristie Batista de Moraes', '1990-08-04', 'agatha_cristie16@hotmail.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', '1112223339999', '2022-10-29', '999', 'Agatha C Moraes', '99999999999', 0),
-(59, 'Moraes', '1990-08-04', 'agathademoraes@gmail.com', '888df25ae35772424a560c7152a1de794440e0ea5cfee62828333a456a506e05', '1234567891234567', '2023-03-03', '999', 'Moraes', '99999999999', 0);
+INSERT INTO `user` (`id`, `name`, `birth_date`, `email`, `password`, `card_number`, `card_expiration_date`, `security_code`, `cardholder`, `CPF_CNPJ`, `is_valid`, `is_admin`) VALUES
+(1, 'Vinicius Eduardo Taborda Costa', '2001-11-23', 'vinicius.costa@gmail.com', '0cc175b9c0f1b6a831c399e269772661', '11122233334444', '2030-01-01', '123', 'VINICIUS E. T. COSTA', '12427904970', 0, 0),
+(2, 'vinicius', '2021-03-19', 'vinicius.taborda.costa@gmail.com', '46070d4bf934fb0d4b06d9e2c46e346944e322444900a435d7d9a95e6d7435f5', '111111', '2002-10-01', '', 'agatha', '111111111', 0, 0),
+(3, 'Agatha Cristie Batista de Moraes', '1990-08-04', 'agatha_cristie16@hotmail.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', '1112223339999', '2022-10-29', '999', 'Agatha C Moraes', '99999999999', 0, 0),
+(59, 'Moraes', '1990-08-04', 'agathademoraes@gmail.com', '888df25ae35772424a560c7152a1de794440e0ea5cfee62828333a456a506e05', '1234567891234567', '2023-03-03', '999', 'Moraes', '99999999999', 0, 0),
+(60, 'admin', '0001-01-01', 'admin@gmail.com', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', '9', '0002-01-01', '9', 'admin', '9', 0, 1);
 
 --
 -- Índices para tabelas despejadas
@@ -541,13 +547,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de tabela `favorites`
 --
 ALTER TABLE `favorites`
-  MODIFY `idfavorites` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=169;
+  MODIFY `idfavorites` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=237;
 
 --
 -- AUTO_INCREMENT de tabela `films`
 --
 ALTER TABLE `films`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de tabela `pma__bookmark`
@@ -565,7 +571,7 @@ ALTER TABLE `pma__column_info`
 -- AUTO_INCREMENT de tabela `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- Restrições para despejos de tabelas

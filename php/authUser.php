@@ -36,12 +36,14 @@
            $_SESSION['cardholder'] = $resultado["cardholder"]; 
            $_SESSION['CPF_CNPJ'] = $resultado["CPF_CNPJ"]; 
            $_SESSION['idUser'] = $resultado["id"];
+           $_SESSION['is_admin'] = $resultado["is_admin"];
            $_SESSION['id'] = session_id();
 
            //$_SESSION['inicio'] = time();
            //$_SESSION['limite'] = 15;
           // header("Location: page/homePage.php");   
-           //print_r($_SESSION);   
+           //print_r($_SESSION);
+           //echo json_encode(($_SESSION));
  
             }else{
                 $msgLogin = "incorrect";
