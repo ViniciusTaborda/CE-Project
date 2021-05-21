@@ -68,7 +68,7 @@ function select() {
                             <div class="divImagem">
                                 <img src="../img/filmes/${base}">
                             </div>
-                            <div class="div-titulo"><br>
+                            <div class="div-titulo">
                                 <h7>${result[i][1]}</h7>
                             </div>
                             <div class="div-descricao" ><b> ${result[i][2]} - ${result[i][3]} - ${result[i][4]}</b> <br>
@@ -141,7 +141,7 @@ function favoritar(){
         }).done(function(result){
             console.log(result);
             });
-           // window.location.reload();
+            window.location.reload();
 
     });
 

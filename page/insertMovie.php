@@ -4,7 +4,7 @@
     include "../php/config.php";
     $conn = new mysqli($servername, $username, $password, $dbname);
     
-    if (!isset($_SESSION['logado']) AND $_SESSION['is_admin'] = true ){
+    if (!isset($_SESSION['logado'])){
         header("Location: ../login.php");   
         session_destroy();
     }
@@ -26,8 +26,10 @@
         <link href="../css/homePage.css" rel="stylesheet">
     </head>
     <body>
+
+    <?php if($_SESSION['is_admin'] == 1){?>
         <div class="div-3">
-            <div class="div-4">
+            <div class="div-cadastroF">
                 <div class="div-5">
                 <h1> Cadastrar Filme</h1>
 
@@ -38,8 +40,6 @@
                         
                     }
                 ?>
-
-                
                 <form method = "post" action = "" enctype = "multipart/form-data">
                 <input type= "text" name= "title" id="title" class="form_register" placeholder = "Título"> <br><br>
                 <input type= "text" name= "genre" id="genre" class="form_register3" placeholder = "Gênero"> 
@@ -62,5 +62,14 @@
                 </div>
             </div>
         </div>
+    <?php } else{ ?>
+        <div class="semAcesso"> 
+            Usuário sem Permissão de Acesso!!!
+            <figure>
+                <img src="../img/tristeza.jpg" alt="Minha Figura">
+                
+            </figure>
+        </div>
+    <?php } ?>
     </body>
 </html>

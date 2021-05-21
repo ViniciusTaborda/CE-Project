@@ -94,10 +94,11 @@ function listarFavoritos(filme, bancoFilme, colorStar){
                             <div class="divImagem">
                                 <img src="../img/filmes/${base}">
                             </div>
-                            <div class="div-titulo"><br>
+                            <div class="div-titulo">
                                 <h7>${bancoFilme[i][1]}</h7>
                             </div>
                             <div class="div-descricao" ><b> ${bancoFilme[i][2]} - ${bancoFilme[i][3]} - ${bancoFilme[i][4]}</b> <br>
+                            
                             <div class="fav-star"><b> ${bancoFilme[i][5]}</b></div>
                             
                             <div class="fav-star"><button type="button" id="button_info" data-toggle="modal"data-info="${bancoFilme[i][6]}" data-target="#info_modal">
