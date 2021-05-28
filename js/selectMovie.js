@@ -62,7 +62,7 @@ function select() {
         $(".card-Films").html("");
         for (var i = 0; i < result.length; i++) { 
             
-            var base = result[i][8].replace("C:fakepath", "");
+            
             var conteudo = "";
             conteudo += `<div class="div-card">
                             <div class="divImagem">
@@ -73,18 +73,27 @@ function select() {
                             </div>
                             <div class="div-descricao" ><b> ${result[i][2]} - ${result[i][3]} - ${result[i][4]}</b> <br>
                             
-                            <div class="fav-star"><b> ${result[i][5]}</b></div>
-                            
+                            <table align:center>
+                            <tr>
+                            <td>
+                            <div class="fav-star"><b> ${result[i][5]}</b></div>   </td>
+                            <td>
                             <div class="fav-star"><button type="button" id="button_info" data-toggle="modal"data-info="${result[i][6]}" data-target="#info_modal">
-                            <i id = "colorInfo" class="fas fa-info-circle"></i> </button></button ></div>                                
-
+                            <i id = "colorInfo" class="fas fa-info-circle"></i> </button></button ></div>    
+                            </td>
+                            <td>
                             <div class="fav-star"><button type="button" id="button_video" class="button_video" data-toggle="modal" data-src="${result[i][7]}" data-target="#video_modal">
-                            <i id = "colorPlay" class="fab fa-youtube"></i></button> </div>`
+                            <i id = "colorPlay" class="fab fa-youtube"></i></button> </div>   </td>`;
 
-            conteudo += `<div id="${result[i][0]}" class="fav-star"> <button type="button" class="button_star">
+            conteudo += `<td>   
+                            <div id="${result[i][0]}" class="fav-star"> <button type="button" class="button_star">
                             <i id = "${result[i][0]}"class="far fa-star star name=id" "></i></button></div>
                             </div>
-                            <div class="div-rodape"></div>`;
+                            <div class="div-rodape"></div>
+                            </td>
+                            </tr>
+                            </table>
+                            `;
 
 
 

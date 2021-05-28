@@ -76,14 +76,6 @@ a:hover{
   text-decoration: underline;
 }
 
-.fav-star{
-  margin: 5px;
-  padding: 5px;
-  float: left;
-  align-items: center;
-}
-
-
 
 .div-card{
   align-items: center;
@@ -395,3 +387,30 @@ border-radius: 5px 5px 5px 5px;
   #bSaveMovie:hover  {
     background-color: #39ace7;
   }
+
+  li {
+    color: white;
+ }
+
+#search_field{
+   padding: 5px;
+   border: none;
+   background-color: #04323F;
+   width: 200px;
+   border-bottom: solid 1px #ddd;
+   outline: none;
+   color: white;
+ }
+
+ table{
+  width: 100%;
+  margin-bottom : .5em;
+  table-layout: fixed;
+  text-align: center;
+}
+
+table i{
+  width: 10px;
+  height: 10px;
+  outline: none;
+}

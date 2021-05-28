@@ -54,7 +54,7 @@ if (isset($_GET['logoff'])) {
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <input id="search_field" placeholder="Search..." type="text">
+                            <input id="search_field" placeholder="Search..." type="search" name="busca" >
                         </li>
                         <li class="nav-item"><a style="cursor:pointer" onclick="selectFiltering()" class="nav-link text-uppercase font-weight-bold"><i class="fas fa-search"></i></a></li>
                         <li class="nav-item"><a href="homePage.php" class="nav-link text-uppercase font-weight-bold"><i class="fas fa-home"></i></a></li>

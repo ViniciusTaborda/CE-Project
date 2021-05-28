@@ -98,19 +98,30 @@ function listarFavoritos(filme, bancoFilme, colorStar){
                                 <h7>${bancoFilme[i][1]}</h7>
                             </div>
                             <div class="div-descricao" ><b> ${bancoFilme[i][2]} - ${bancoFilme[i][3]} - ${bancoFilme[i][4]}</b> <br>
-                            
+                            <table>
+                            <tr>
+                            <td>
                             <div class="fav-star"><b> ${bancoFilme[i][5]}</b></div>
-                            
+                            </td>
+                            <td>
                             <div class="fav-star"><button type="button" id="button_info" data-toggle="modal"data-info="${bancoFilme[i][6]}" data-target="#info_modal">
                             <i id = "colorInfo" class="fas fa-info-circle"></i> </button></button ></div>                                
-
+                            </td>
+                            <td>
                             <div class="fav-star"><button type="button" id="button_video" class="button_video" data-toggle="modal" data-src="${bancoFilme[i][7]}" data-target="#video_modal">
-                            <i id = "colorPlay" class="fab fa-youtube"></i></button> </div>`
-
-                conteudo += `<div id="${bancoFilme[i][0]}" class="fav-star"> <button type="button" class="button_star">
-                <i id = "${bancoFilme[i][0]}"class="far fa-star  ` + colorStar + ` star name=id" "></i></button></div>
+                            <i id = "colorPlay" class="fab fa-youtube"></i></button> </div>
+                            </td>`;
+                            
+                conteudo += `<td> 
+                            <div id="${bancoFilme[i][0]}" class="fav-star"> <button type="button" class="button_star">
+                            <i id = "${bancoFilme[i][0]}"class="far fa-star  ` + colorStar + ` star name=id" "></i></button></div>
                             </div>
-                            <div class="div-rodape"></div>`;
+                            <div class="div-rodape"></div>
+                            </td>
+                            </tr>
+                            </table>
+                            
+                            `;
             
             $(".card-Favorites-"+filme).prepend(conteudo);
         
