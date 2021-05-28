@@ -66,7 +66,7 @@ function select() {
             var conteudo = "";
             conteudo += `<div class="div-card">
                             <div class="divImagem">
-                                <img src="../img/filmes/${base}">
+                                <img src="../img/filmes/${result[i][0]}/${result[i][8]}">
                             </div>
                             <div class="div-titulo">
                                 <h7>${result[i][1]}</h7>

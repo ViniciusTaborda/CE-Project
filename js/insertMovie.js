@@ -1,3 +1,6 @@
+var arquivo;
+var formData;
+
 $(document).ready(function(){
     saveFilm();
 
@@ -7,11 +10,10 @@ var registerError = false;
 const entry_point = "http://localhost/CE-Project/";
 
 function saveFilm(){
-    
+
     ($("#bSaveMovie")).click(function(){
         saveMovei();
        // window.location = "insertMovie.php";
-
 
    });
 }
@@ -19,7 +21,10 @@ function saveFilm(){
 
 function saveMovei(){
 
-    let end_point = "php/registerMovie.php";
+
+    var myForm = document.getElementById('newMovie');
+    formData = new FormData(myForm);
+//    console.log(formData.get('image'));
 
     var title = $("#title").val();
     var genre = $("#genre").val();
@@ -28,37 +33,26 @@ function saveMovei(){
     var relevance = $("#relevance").val();
     var synopsis = $("#synopsis").val();
     var trailer = $("#trailer").val();
-    var image = $("#image").val();
+    var image = $("#file").val();
     var typeVideo = $("#typeVideo").val();
 
-    JSON_variables = {
-        title: title,
-        genre: genre,
-        year: year,
-        length: length,
-        relevance: relevance,
-        synopsis: synopsis,
-        trailer: trailer,
-        image: image,
-        typeVideo:typeVideo
-        };
+    let end_point = "php/registerMovie.php";
 
     let url = `${entry_point}${end_point}`;
 
-  /*  $.post(url, JSON_variables, function(data) {
-        console.log(data);
-    })
-*/
     $.ajax({
         url: url,
-        method: 'POST',
-        data: JSON_variables,
-        dataType: 'json'
+        type: 'POST',
+        data: formData,
+        contentType: false,
+        cache: false,
+        processData: false,
+        success: function(retorno){
+            alert(retorno)
+        }
+    });
 
-
-    }).done(function(result){
-        console.log(result);
-        });
+    return false;
  
 }
 

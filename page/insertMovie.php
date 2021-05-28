@@ -40,7 +40,7 @@
                         
                     }
                 ?>
-                <form method = "post" action = "" enctype = "multipart/form-data">
+                <form id="newMovie" name = "newMovie " method = "post" action = "" enctype = "multipart/form-data">
                 <input type= "text" name= "title" id="title" class="form_register" placeholder = "Título"> <br><br>
                 <input type= "text" name= "genre" id="genre" class="form_register3" placeholder = "Gênero"> 
                 <input type= "number" name= "year" id="year" class="form_register3" placeholder = "Ano">   
@@ -48,13 +48,13 @@
                 <input type= "text" name= "relevance" id="relevance" class="form_register3" placeholder = "Relevância">
                 
                 <!-- O segundo valor estará selecionado inicialmente-->
-                    <select id="typeVideo" class="form_register">
+                    <select id="typeVideo" name="typeVideo" class="form_register">
                     <option type = "text" value="Filme" selected>Filme</option>
                     <option type = "text" value="Série">Série</option>
                     </select>
                 <input type= "text" name= "synopsis" id="synopsis" class="form_register2" placeholder = "Sinopse"> <br><br>        
                 <input type= "url" name= "trailer" id="trailer" class="form_register" placeholder = "Trailer"> <br><br>        
-                <input type= "file" name= "image" id="image" > <br><br>
+                <input type= "file" name= "file" id="image" > <br><br>
 
                 <input type = "submit" id = "bSaveMovie" value = "Cadastrar">
                     

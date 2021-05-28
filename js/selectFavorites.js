@@ -88,11 +88,11 @@ function listarFavoritos(filme, bancoFilme, colorStar){
     if (bancoFilme.length <23){
         for (var i = 0; i < bancoFilme.length; i++) { 
             
-            var base = bancoFilme[i][8].replace("C:fakepath", "");
+            
             var conteudo = "";
             conteudo += `<div class="div-card">
                             <div class="divImagem">
-                                <img src="../img/filmes/${base}">
+                            <img src="../img/filmes/${bancoFilme[i][0]}/${bancoFilme[i][8]}">
                             </div>
                             <div class="div-titulo">
                                 <h7>${bancoFilme[i][1]}</h7>
