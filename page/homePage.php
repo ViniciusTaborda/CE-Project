@@ -25,15 +25,16 @@ if (isset($_GET['logoff'])) {
     <link rel="icon" href="../img/icon.png">
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/selectMovie.js"></script>
-    
+    <script type="text/javascript" src="../js/homePage.js"></script>
+
     <!--<script type="text/javascript" src="../js/favoritos.js"></script>-->
-    
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link href="../css/homePage.css" rel="stylesheet">
     <link rel="icon" href="../img/icon.png">
-    
+
 </head>
 
 <body>
@@ -46,10 +47,14 @@ if (isset($_GET['logoff'])) {
 
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="homePage.php" class="nav-link text-uppercase font-weight-bold"><i class="fas fa-home"></i></a></li>
+                        <li class="nav-item">
+                            <input id="search_field" placeholder="Search..." type="text">
+                        </li>
+                        <li class="nav-item"><a style="cursor:pointer" onclick="selectFiltering()" class="nav-link text-uppercase font-weight-bold"><i class="fas fa-search"></i></a></li>
+                        <li class="nav-item"><a href="homePage.php" class="nav-link text-uppercase font-weight-bold"><i class="fas fa-home"></i></a></li>
                         <li class="nav-item"><a href="editProfile.php" class="nav-link text-uppercase font-weight-bold"><i class="far fa-sun"></i></a></li>
-                        <?php if($_SESSION['is_admin'] == 1){?>
-                        <li class="nav-item"><a href="insertMovie.php" class="nav-link text-uppercase font-weight-bold"><i class="far fa-lightbulb"></i></i></a></li>
+                        <?php if ($_SESSION['is_admin'] == 1) { ?>
+                            <li class="nav-item"><a href="insertMovie.php" class="nav-link text-uppercase font-weight-bold"><i class="far fa-lightbulb"></i></i></a></li>
                         <?php } ?>
                         <li class="nav-item"><a href="favorites.php" class="nav-link text-uppercase font-weight-bold"><i class="far fa-star"></i></i></a></li>
                         <li class="nav-item"><a href="?logoff" class="nav-link text-uppercase font-weight-bold"><i class="fas fa-power-off"></i></a></li>
@@ -67,7 +72,7 @@ if (isset($_GET['logoff'])) {
         <br><br><br>
 
         <div class="card-Films">
-       
+
         </div>
 
         <!-- Modal -->
@@ -92,21 +97,21 @@ if (isset($_GET['logoff'])) {
 
 
 
-              <!-- Modal -->
-            <div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <!-- Modal -->
+        <div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel"></h4>
-                </div>
-                <div class="modal-body" id="modalBody">
-                    
-                </div>
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel"></h4>
+                    </div>
+                    <div class="modal-body" id="modalBody">
+
+                    </div>
 
                 </div>
             </div>
-            </div>
+        </div>
 
 
 
